@@ -233,134 +233,199 @@ mechanics, and secrets that aren't in any manual.
 
 ---
 
-## Milestone 3: Game Enhancements (v2.x)
+## Milestone 3: Game Enhancements — Tiered by Feasibility
 
-Modernizing the game while keeping its spirit. Once we modify actual
-assembly instructions, the binary will no longer match the original —
-so we need a new verification strategy: build, load in emulator, test.
+Once we modify actual assembly instructions, the binary will no longer
+match the original. Verification shifts to: compile + load in emulator +
+smoke test.
+
+**Constraints discovered during analysis:**
+- Only ~181 bytes of free space in the binary ($FA9B-$FB50)
+- Total RAM: 48K, game uses 42K ($5B00-$FFFF)
+- All addresses are hardcoded — inserting code shifts jump targets
+- Self-modifying code is used throughout
+- No native ZX Spectrum → ARM port has ever been done
 
 ### Verification Strategy (post-v1.x)
 
-Since the binary won't match the original after code changes:
 1. Build with `make` — must compile without errors
 2. Load `recompile/bt.tap` in Fuse — must boot to Guild
 3. Smoke test: create character, walk around, enter combat, cast spell
 4. Regression: specific feature being changed must work as intended
 
-### v2.0.0 — Quality of Life: Spell Menu
+---
 
-The #1 complaint: memorizing 4-letter spell codes is brutal for new
-players. Add a spell selection menu that shows available spells.
+### v2.x — Low-Hanging Fruit (small byte changes, proven safe)
 
-- [ ] Add spell list display when casting (show known spells with codes)
-- [ ] Keep manual code entry as fallback (don't remove — honor legacy)
-- [ ] Show spell point cost next to each spell
-- [ ] Smoke test: cast spells via both menu and manual entry
+These modify only a few bytes each and don't require new routines.
 
-### v2.1.0 — Quality of Life: Save Anywhere
+#### v2.0.0 — Add WASD Movement Support
 
-Second biggest complaint: can only save at the Guild. Add save/load
-from any location.
+Movement handler checks I/J/K/L. Add W/A/S/D as alternatives.
+~12 bytes of additional comparisons in existing free space around
+the movement routine.
 
-- [ ] Modify save routine to work outside Guild
-- [ ] Add save confirmation prompt
-- [ ] Ensure load restores position correctly
-- [ ] Smoke test: save in dungeon, reload, verify position
+- [ ] Add W = forward, S = kick/back, A = turn left, D = turn right
+- [ ] Keep I/J/K/L working (don't remove legacy controls)
+- [ ] Smoke test: navigate city with both WASD and IJKL
 
-### v2.2.0 — Quality of Life: Auto-Map
+#### v2.1.0 — Reduce Encounter Rate
 
-Getting lost is the core frustration. Add a simple auto-map that
-tracks explored tiles.
+City ambush check requires 3 consecutive random passes. Change the
+third threshold from 7Fh to FFh (1 byte change) to roughly halve
+city encounter rate.
 
-- [ ] Reserve memory for visited-tiles bitmap
-- [ ] Mark tiles as visited on movement
-- [ ] Add key to toggle map display
-- [ ] Display map using screen attributes (minimal graphics needed)
-- [ ] Smoke test: explore city, verify map tracks movement
+- [ ] Modify ambush threshold in game_cycle.asm
+- [ ] Smoke test: walk around city, encounters should be rarer
 
-### v2.3.0 — Combat Speed & Auto-Battle
+#### v2.2.0 — Speed Up Combat Animations
 
-Combat grind is tedious. Add speed controls and auto-repeat.
+The `change_speed` routine uses a delay loop. Reduce the default
+combat speed value from 5 to 2 (1 byte change in INIT_GAME).
 
-- [ ] Add fast-forward key to skip combat animations
-- [ ] Add "repeat last action" option per hero
-- [ ] Add party auto-attack (all heroes attack, no prompts)
-- [ ] Smoke test: fight 10 encounters, verify speed + auto work
+- [ ] Change VAR_COMBAT_SPEED initial value
+- [ ] Smoke test: combat text appears faster
 
-### v2.4.0 — UI Improvements
+#### v2.3.0 — Disable City Monsters Cheat as Toggle
 
-Modern expectations for feedback and clarity.
+The NOCITYMONSTERS define already exists but requires recompilation.
+Add a runtime toggle key (e.g. F1) that sets VAR_AMBUSH_FLAG to
+skip combat in the city.
 
-- [ ] Show HP bars or numeric HP in party display
-- [ ] Show enemy group count and HP estimate during combat
-- [ ] Highlight active hero during combat round
-- [ ] Add status icons for poison/paralysis/etc
-- [ ] Smoke test: all status conditions display correctly
+- [ ] Hook a key check in the main loop (~10 bytes in free space)
+- [ ] Toggle a flag that bypasses city_ambush
+- [ ] Smoke test: press key, walk around, no encounters
 
-### v2.5.0 — Standalone Mac App (Embedded Emulator)
+#### v2.4.0 — Show Coordinates on Screen
 
-No native ZX Spectrum → ARM port exists. The approach: embed the Fuse
-emulator library into a Swift/Cocoa wrapper that auto-loads the game.
+The `show_location_info` routine already prints "You face [direction]"
+but only when you press a specific key sequence. Add persistent
+coordinate display.
 
-- [ ] Research libfuse / libspectrum API for embedding
-- [ ] Create Swift wrapper that initializes Fuse programmatically
-- [ ] Auto-load bt.tap on launch (no manual File > Open)
-- [ ] Map keyboard controls to modern layout (WASD + arrow keys)
-- [ ] Add app icon and proper macOS menu bar
-- [ ] Package as .app bundle with code signing
-- [ ] Smoke test: double-click app, game starts, controls work
+- [ ] Add coordinate print call after each movement
+- [ ] Uses existing show_location_info code, just called more often
+- [ ] Smoke test: coordinates update as you move
 
-### v2.6.0 — Key Remapping & Modern Controls
+---
 
-ZX Spectrum's 5/6/7/8 and I/J/K/L are unintuitive.
+### v3.x — Medium Difficulty (needs creative solutions, might work)
 
-- [ ] Add WASD support for movement
-- [ ] Add arrow key support for movement
-- [ ] Add number pad support for combat options
-- [ ] Make key mapping configurable (stored in settings)
-- [ ] Smoke test: all control schemes work in city + combat
+These require new routines in the ~181 bytes of free space, or clever
+reuse of existing code. May require multiple attempts.
 
-### v2.7.0 — Difficulty Options
+#### v3.0.0 — Spell Code Hint on Cast Screen
 
-The 2018 remaster proved players want options.
+When casting, show the 4-letter codes of known spells (compact list).
+Needs ~80-120 bytes of new code in free space at $FA9B.
 
-- [ ] Add "Classic" mode (original behavior, default)
-- [ ] Add "Modern" mode:
-  - Reduced XP requirements for leveling
-  - Party gold pool (shared gold)
-  - Status conditions curable by rest (not just Temple)
-  - Reduced encounter rate
-- [ ] Mode selection at game start
-- [ ] Smoke test: verify both modes play correctly
+- [ ] Write spell list walker routine in free space
+- [ ] Hook into who_cast_spell before "Spell to cast:" prompt
+- [ ] Filter by hero's spell level per class
+- [ ] Smoke test: cast screen shows known spell codes
 
-### v2.8.0 — Enhanced Graphics (if feasible)
+#### v3.1.0 — Party Auto-Attack
 
-The ZX Spectrum has severe graphics constraints (256x192, 2 colors per
-8x8 block). But within those constraints:
+Add a key that makes all heroes repeat "Attack" without prompting.
+Needs to store last action per hero and bypass the options menu.
 
-- [ ] Improve dungeon wall textures (more detail in existing tiles)
-- [ ] Add unique building graphics (Guild, Shoppe, Temple look different)
-- [ ] Improve monster portraits where possible
-- [ ] Add title screen / splash art
-- [ ] Smoke test: visual improvements display correctly
+- [ ] Reserve 6 bytes for last-action-per-hero buffer
+- [ ] Add key check in battle_options (~20 bytes)
+- [ ] Auto-execute stored action on key press
+- [ ] Smoke test: press key, all heroes attack automatically
 
-### v2.9.0 — Sound & Music
+#### v3.2.0 — Quick Save to Memory
 
-The ZX Spectrum beeper is limited but can do more than silence.
+Instead of tape save (which requires the Guild), save game state to
+a memory buffer. Won't persist across power-off but lets you checkpoint.
 
-- [ ] Add combat start jingle
-- [ ] Add victory/defeat sounds
-- [ ] Add ambient dungeon sounds
-- [ ] Improve bard song playback
-- [ ] Smoke test: all sounds play at correct triggers
+- [ ] Find/create a 128-byte buffer for state snapshot
+- [ ] Add key to trigger save (copy GAME_VARIABLES block)
+- [ ] Add key to trigger load (restore from buffer)
+- [ ] Smoke test: save in city, die, load, back at save point
 
-### v3.0.0 — Polish & Release
+#### v3.3.0 — Show HP in Stats Bar
 
-- [ ] Final pass on all features
-- [ ] Write player-facing README/manual for enhanced version
-- [ ] Create "What's New" document comparing to original
-- [ ] Tag as stable release
-- [ ] Create GitHub Release with .app bundle download
+The stats table already shows hero names. Add current/max HP display
+by modifying print_stats_table.
+
+- [ ] Modify stats rendering to include HP numbers
+- [ ] Fit within existing screen layout (may need to abbreviate)
+- [ ] Smoke test: HP visible and updates during combat
+
+#### v3.4.0 — Combat Victory Sound
+
+The beeper routine already exists (call_beeper). Add a short victory
+jingle after enemies_killed.
+
+- [ ] Compose 3-4 note jingle as beeper frequency/duration pairs
+- [ ] Insert call after enemies_killed XP award (~10 bytes)
+- [ ] Smoke test: win combat, hear jingle
+
+---
+
+### v4.x — Hard / Needs Human Intervention (may be impossible)
+
+These hit fundamental ZX Spectrum constraints. Would likely require
+either a different technical approach (emulator wrapper, C port) or
+significantly more free memory than exists.
+
+#### v4.0.0 — Standalone Mac App (Embedded Emulator)
+
+Embed Fuse/libspectrum into a Swift wrapper. Auto-loads bt.tap, maps
+keys to modern layout. This is a separate software project, not an
+assembly mod.
+
+- [ ] Research libfuse C API for programmatic control
+- [ ] Create Xcode project with Fuse as embedded library
+- [ ] Auto-load bt.tap, intercept keyboard for remapping
+- [ ] Package as .app with icon and menu bar
+- [ ] DIFFICULTY: Fuse may not have a clean embedding API
+
+#### v4.1.0 — Full Spell Selection Menu
+
+Show spell names (not just codes) with descriptions and costs.
+Needs hundreds of bytes of new code + text data. The 181 bytes
+of free space isn't enough.
+
+- [ ] Would need to compress existing data or relocate code
+- [ ] Or implement as external tool that patches the binary
+- [ ] DIFFICULTY: Memory is completely full
+
+#### v4.2.0 — Auto-Map with Visual Display
+
+Track visited tiles as bitmap, render as overhead map.
+Needs ~900 bytes for a 30x30 city bitmap + rendering code.
+
+- [ ] No memory for the bitmap without removing existing features
+- [ ] Could potentially use screen attribute area for storage
+- [ ] DIFFICULTY: No free RAM, would corrupt display
+
+#### v4.3.0 — Difficulty Modes (Classic vs Modern)
+
+Multiple game modes with different XP curves, encounter rates, etc.
+Needs branching logic throughout the game + mode selection UI.
+
+- [ ] Would need ~200+ bytes of new branching code scattered
+      across combat, XP, and encounter routines
+- [ ] DIFFICULTY: Not enough free space, too many touch points
+
+#### v4.4.0 — Enhanced Graphics
+
+New or improved sprites, building art, monster portraits.
+ZX Spectrum graphics are 1-bit with color attributes per 8x8 block.
+
+- [ ] New art would need to be drawn within ZX Spectrum constraints
+- [ ] Would replace existing graphics data (same byte count)
+- [ ] DIFFICULTY: Requires pixel art skill in ZX Spectrum format
+
+#### v4.5.0 — Full Sound/Music System
+
+Multi-channel music via the beeper using pulse-width tricks.
+Would need an interrupt-driven music player.
+
+- [ ] ZX Spectrum beeper is single-channel, CPU-driven
+- [ ] Music during gameplay would halt the game (CPU busy beeping)
+- [ ] DIFFICULTY: Fundamental hardware limitation
 
 ---
 
