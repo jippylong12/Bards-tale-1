@@ -4,7 +4,7 @@ INIT_GAME:
 		ld	b, 6Fh
 		call	nullify_buffer
 		xor	a
-		ld	(iy+VAR_COMBAT_SPEED), 5
+		ld	(iy+VAR_COMBAT_SPEED), 2		; was 5 — faster combat text
 
 set_vars_and_IM:
 		di

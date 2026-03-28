@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.2.0] - 2026-03-28
+
+### Changed
+- **Faster combat animations** — default combat speed 5→2. Combat text and action resolution ~2.5x faster. One byte change at $6033.
+
 ## [2.1.0] - 2026-03-28
 
 ### Changed

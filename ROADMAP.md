@@ -272,13 +272,10 @@ These modify only a few bytes each and don't require new routines.
 - [x] Encounter rate: 1/8192 per step (was 1/4096) — half as frequent
 - [x] Smoke tested: noticeably fewer random encounters while walking
 
-#### v2.2.0 — Speed Up Combat Animations
+#### v2.2.0 — Speed Up Combat Animations (DONE)
 
-The `change_speed` routine uses a delay loop. Reduce the default
-combat speed value from 5 to 2 (1 byte change in INIT_GAME).
-
-- [ ] Change VAR_COMBAT_SPEED initial value
-- [ ] Smoke test: combat text appears faster
+- [x] Changed VAR_COMBAT_SPEED default from 5 to 2 (1 byte at $6033)
+- [x] Combat text and action resolution ~2.5x faster
 
 #### v2.3.0 — Disable City Monsters Cheat as Toggle
 
