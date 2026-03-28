@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.6.0] - 2026-03-28
+
+### Added
+- `guide/` directory with 7 source-derived game guides:
+  - **EASTER_EGGS.md** — hidden mechanics no manual covers: enemy joining party, Hunter crits, Monk unarmed scaling, item breakage, Paladin hidden AC, day/night encounter math, cheat defines, guardian/inn exact coordinates
+  - **COMBAT.md** — full damage formulas from assembly, initiative multipliers per class, AC calculation, flee mechanics with speed comparison, damage type effects (poison/drain/stoning/instant kill)
+  - **CLASSES.md** — all 10 classes with exact scaling from source code, Monk being the strongest class proven by math, multi-class strategy
+  - **MAGIC.md** — every spell cost, all light/reveal durations, summoned creature table, spell duration system, anti-magic warning
+  - **EXPLORATION.md** — city grid layout, day/night cycle internals, encounter rate math, all 7 tavern locations, Sinister Street secret, 3D rendering explanation
+  - **ITEMS.md** — equip eligibility, breakage probability (1/64 for cheap items), special attack types, bard instrument requirement, SP-halving equipment
+  - **LEVELING.md** — XP distribution formula, per-class XP curves, Review Board mechanics, stat growth, HP/SP regen, optimal leveling strategy
+
 ## [1.5.0] - 2026-03-28
 
 ### Added

@@ -205,6 +205,19 @@ not hex offsets. Each patch version is independently verifiable.
 - [x] CROSS_REFERENCE.md: Main game loop call graph
 - [x] CROSS_REFERENCE.md: Full combat call graph
 
+### v1.6.0 — Source-Derived Game Guide & Easter Eggs
+
+Game knowledge extracted directly from the assembly — real numbers, hidden
+mechanics, and secrets that aren't in any manual.
+
+- [x] `guide/EASTER_EGGS.md` — hidden mechanics, secrets, oddities found in the code
+- [x] `guide/COMBAT.md` — damage formulas, initiative, class advantages, flee mechanics
+- [x] `guide/CLASSES.md` — per-class breakdown with actual stat scaling from source
+- [x] `guide/MAGIC.md` — spell system deep dive, costs, durations, which spells stack
+- [x] `guide/EXPLORATION.md` — city layout, dungeon tips, encounter rates, day/night
+- [x] `guide/ITEMS.md` — equipment system, special weapon types, breakage chances
+- [x] `guide/LEVELING.md` — XP formulas per class, level thresholds, stat growth
+
 ---
 
 ## File Inventory
