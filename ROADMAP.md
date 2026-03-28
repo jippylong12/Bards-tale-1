@@ -255,6 +255,8 @@ smoke test.
 | v2.4.0 Coordinate display | 40 | 97 | 84 |
 | v3.0.0 Spell code hints | 81 | 178 | 4 |
 
+See [FREE_SPACE.md](FREE_SPACE.md) for full investigation of additional space.
+
 ### Verification Strategy (post-v1.x)
 
 1. Build with `make` — must compile without errors
