@@ -617,7 +617,7 @@ loc_C11D:
 ; ======= S U B	R O U T	I N E =========
 
 LEVEL_START:					; C18C (49548) load 39C5 (14789) bytes of level here
-		include "levels/city/code/C18C-C19D___UNKNOWN.asm"
+		include "levels/city/code/C18C-C19D_movement_dispatch.asm"
 
 		include "levels/city/tables/C19E-C2C1_addr_table.asm"
 
@@ -633,14 +633,14 @@ LEVEL_START:					; C18C (49548) load 39C5 (14789) bytes of level here
 		include "levels/city/code/E3CE-E3FB_shoppe_identify.asm"
 		include "levels/city/code/E3FC-E422_shoppe_sell.asm"
 		include "levels/city/code/E423-E4F3_shoppe_buy.asm"
-		include "levels/city/code/E4F4-E50C___UNKNOWN.asm"
-		include "levels/city/code/E50D-E54B___UNKNOWN.asm"
-		include "levels/city/code/E54C-E561___UNKNOWN.asm"
+		include "levels/city/code/E4F4-E50C_shift_price_buffer.asm"
+		include "levels/city/code/E50D-E54B_display_inventory_list.asm"
+		include "levels/city/code/E54C-E561_get_inventory_selection.asm"
 
 		include "levels/city/data/E562-E5E1_UNKNOWN.asm"
 
 		include "levels/city/code/E5E2-E5F2_print_item_price.asm"
-		include "levels/city/code/E5F3-E5FF___UNKNOWN.asm"
+		include "levels/city/code/E5F3-E5FF_format_item_price.asm"
 		include "levels/city/code/E600-E746_proc_temple.asm"
 		include "levels/city/code/E747-E7A8_proc_guild.asm"
 		include "levels/city/code/E7A9-E855_proc_guardian.asm"
@@ -648,8 +648,8 @@ LEVEL_START:					; C18C (49548) load 39C5 (14789) bytes of level here
 		include "levels/city/data/E856-E87D_guardians.asm"
 
 		include "levels/city/code/E87E-E8A7_proc_city_sewers.asm"
-		include "levels/city/code/E8A8-E8BB___UNKNOWN.asm"
-		include "levels/city/code/E8BC-E8CB___UNKNOWN.asm"
+		include "levels/city/code/E8A8-E8BB_compare_char_attrs.asm"
+		include "levels/city/code/E8BC-E8CB_copy_char_params.asm"
 
 		include "levels/city/data/E8CC-E8DD_UNKNOWN.asm"
 		include "levels/city/data/E8DE-E8F5_inns_data.asm"
@@ -659,8 +659,8 @@ LEVEL_START:					; C18C (49548) load 39C5 (14789) bytes of level here
 		include "levels/city/code/E950-EA54_do_advancement.asm"
 		include "levels/city/code/EA55-EACD_do_spell_acquire.asm"
 		include "levels/city/code/EACE-EBAA_do_class_change.asm"
-		include "levels/city/code/EBAB-EBB3___UNKNOWN.asm"
-		include "levels/city/code/EBB4-EBC2___UNKNOWN.asm"
+		include "levels/city/code/EBAB-EBB3_adjust_stat_floor.asm"
+		include "levels/city/code/EBB4-EBC2_add_16bit_carry.asm"
 
 		include "levels/city/data/EBC3-EBD7_UNKNOWN.asm"
 
@@ -682,14 +682,14 @@ LEVEL_START:					; C18C (49548) load 39C5 (14789) bytes of level here
 
 		include "levels/city/tables/EF44-EF6F_procs_buffer3.asm"
 
-		include "levels/city/code/EF70-EFD1___UNKNOWN.asm"
-		include "levels/city/code/EFD2-F13E___UNKNOWN.asm"
-		include "levels/city/code/F13F-F178___UNKNOWN.asm"
+		include "levels/city/code/EF70-EFD1_proc_sinister_street.asm"
+		include "levels/city/code/EFD2-F13E_render_3d_view.asm"
+		include "levels/city/code/F13F-F178_display_walls_creatures.asm"
 
 		include "levels/city/data/F179-F1A8_UNKNOWN.asm"
 
-		include "levels/city/code/F1A9-F258___UNKNOWN.asm"
-		include "levels/city/code/F259-F28E___UNKNOWN.asm"
+		include "levels/city/code/F1A9-F258_render_sprite_3d.asm"
+		include "levels/city/code/F259-F28E_decode_sprite_mask.asm"
 		include "levels/city/code/F28F-F3EA_create_char.asm"
 		include "levels/city/code/F3EB-F416_remove_char.asm"
 		include "levels/city/code/F417-F455_load_save_party.asm"

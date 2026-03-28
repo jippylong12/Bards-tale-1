@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.9.0] - 2026-03-28
+
+### Identified (14 routines — city/level code)
+- `movement_dispatch` — entry point routing for movement and sinister encounter events
+- `shift_price_buffer` — BCD right-shift with carry for price calculations
+- `display_inventory_list` — shows inventory items with equip markers and prices
+- `get_inventory_selection` — validates player's 1-8 item selection
+- `format_item_price` — formats item price for display
+- `compare_char_attrs` — compares 4-byte character attribute blocks
+- `copy_char_params` — saves/restores character parameters during class change
+- `adjust_stat_floor` — subtracts with zero floor, adds offset
+- `add_16bit_carry` — 16-bit addition with carry propagation
+- `proc_sinister_street` — Sinister Street evil magic encounter handler
+- `render_3d_view` — core 3D dungeon/city rendering engine (coordinate mapping, view calculation)
+- `display_walls_creatures` — renders wall and creature layers in 3D view
+- `render_sprite_3d` — decodes and renders 3D sprites with RLE encoding
+- `decode_sprite_mask` — converts sprite patterns to pixel transparency masks
+
+### Milestone
+- **All 75 code UNKNOWN files are now identified** (61 core + 14 city)
+- Only 26 data/table UNKNOWN files remain (raw data, not code routines)
+
+### Verified
+- Binary still matches original after all renames
+
 ## [0.8.0] - 2026-03-28
 
 ### Identified (7 routines — core + display)

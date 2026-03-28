@@ -138,23 +138,24 @@ Note: originally labeled "dungeon" — turned out to be spell effect dispatch ta
 - [x] `890D-891C` — toggle_speed_flag (animation speed toggle)
 - [x] `C00A-C038` — print_item_name_padded (right-pad item name to 11 chars)
 
-### v0.9.0 — Reverse Engineer City/Level Code (24 files)
+### v0.9.0 — Reverse Engineer City/Level Code (14 files) (DONE)
 
-- [ ] `C18C-C19D` — city level init
-- [ ] `E4F4-E50C` — shoppe helper
-- [ ] `E50D-E54B` — shoppe helper
-- [ ] `E54C-E561` — shoppe helper
-- [ ] `E5F3-E5FF` — temple/price helper
-- [ ] `E8A8-E8BB` — city location helper
-- [ ] `E8BC-E8CB` — city location helper
-- [ ] `EBAB-EBB3` — review board helper
-- [ ] `EBB4-EBC2` — review board helper
-- [ ] `EF70-EFD1` — city navigation
-- [ ] `EFD2-F13E` — city navigation (large)
-- [ ] `F13F-F178` — city navigation
-- [ ] `F1A9-F258` — city processing
-- [ ] `F259-F28E` — city processing
-- Plus remaining unnamed data tables and variables
+All code UNKNOWN files now identified. Only data/table UNKNOWN files remain.
+
+- [x] `C18C-C19D` — movement_dispatch (entry routing for movement/sinister events)
+- [x] `E4F4-E50C` — shift_price_buffer (BCD right-shift for price display)
+- [x] `E50D-E54B` — display_inventory_list (show items with equip markers + prices)
+- [x] `E54C-E561` — get_inventory_selection (validate 1-8 item choice)
+- [x] `E5F3-E5FF` — format_item_price (price display formatting helper)
+- [x] `E8A8-E8BB` — compare_char_attrs (4-byte attribute block comparison)
+- [x] `E8BC-E8CB` — copy_char_params (save/restore params during class change)
+- [x] `EBAB-EBB3` — adjust_stat_floor (subtract with zero floor + add)
+- [x] `EBB4-EBC2` — add_16bit_carry (16-bit addition with carry propagation)
+- [x] `EF70-EFD1` — proc_sinister_street (evil magic encounter on Sinister Street)
+- [x] `EFD2-F13E` — render_3d_view (core 3D dungeon rendering engine)
+- [x] `F13F-F178` — display_walls_creatures (wall/creature layer rendering)
+- [x] `F1A9-F258` — render_sprite_3d (3D sprite decoder and renderer)
+- [x] `F259-F28E` — decode_sprite_mask (pixel transparency mask decoder)
 
 ### v1.0.0 — Full Documentation & Variable Naming
 
