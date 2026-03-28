@@ -188,13 +188,15 @@ not hex offsets. Each patch version is independently verifiable.
 - [x] Named 18 `RST_10_xx` macros → meaningful dispatch names (CHECK_FLEE_RESULT, SELECT_TARGET, etc.)
 - [x] Verified binary matches
 
-### v1.4.0 — Architecture Documentation
+### v1.4.0 — Architecture Documentation (DONE)
 
-- [ ] Document RST 10h dispatch system (how the macro/jump table works)
-- [ ] Document memory map ($5B00-$FFFF layout)
-- [ ] Document character struct layout (all 100 bytes)
-- [ ] Document enemy struct layout
-- [ ] Document the address table system (INX_xx indices)
+- [x] ARCHITECTURE.md: RST 10h dispatch system
+- [x] ARCHITECTURE.md: Memory map ($0000-$FFFF)
+- [x] ARCHITECTURE.md: Character struct (100 bytes, all fields)
+- [x] ARCHITECTURE.md: Enemy struct
+- [x] ARCHITECTURE.md: Combat flow diagram
+- [x] ARCHITECTURE.md: Spell system + effect dispatch
+- [x] ARCHITECTURE.md: 3D rendering pipeline
 
 ### v1.5.0 — Cross-Reference Map
 

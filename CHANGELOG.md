@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.4.0] - 2026-03-28
+
+### Added
+- `ARCHITECTURE.md` — comprehensive technical documentation covering:
+  - Full memory map ($0000-$FFFF with all regions described)
+  - RST 10h dispatch system (how macros map to routines via jump table)
+  - Character struct layout (all 100 bytes, every field)
+  - Enemy struct layout
+  - Combat flow (from encounter generation through XP awards)
+  - Spell system (4-letter codes → type dispatch → effect handlers)
+  - 3D rendering pipeline (view calculation → wall layers → sprite decode)
+
 ## [1.3.0] - 2026-03-28
 
 ### Named (31 tables + macros)
