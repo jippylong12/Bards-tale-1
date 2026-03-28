@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.0.0-roadmap] - 2026-03-28
+
+### Added
+- Milestone 3 roadmap: game enhancements (v2.0.0 through v3.0.0)
+- 10 planned versions covering: spell menu, save anywhere, auto-map,
+  combat speed, UI improvements, standalone Mac app, key remapping,
+  difficulty options, enhanced graphics, sound, and final polish
+- Verification strategy for post-binary-match development
+
 ## [1.6.0] - 2026-03-28
 
 ### Added

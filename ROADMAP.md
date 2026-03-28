@@ -231,6 +231,139 @@ mechanics, and secrets that aren't in any manual.
 | Graphics | — | — | 2 |
 | **Code Total** | **147** | **0** | **147** |
 
+---
+
+## Milestone 3: Game Enhancements (v2.x)
+
+Modernizing the game while keeping its spirit. Once we modify actual
+assembly instructions, the binary will no longer match the original —
+so we need a new verification strategy: build, load in emulator, test.
+
+### Verification Strategy (post-v1.x)
+
+Since the binary won't match the original after code changes:
+1. Build with `make` — must compile without errors
+2. Load `recompile/bt.tap` in Fuse — must boot to Guild
+3. Smoke test: create character, walk around, enter combat, cast spell
+4. Regression: specific feature being changed must work as intended
+
+### v2.0.0 — Quality of Life: Spell Menu
+
+The #1 complaint: memorizing 4-letter spell codes is brutal for new
+players. Add a spell selection menu that shows available spells.
+
+- [ ] Add spell list display when casting (show known spells with codes)
+- [ ] Keep manual code entry as fallback (don't remove — honor legacy)
+- [ ] Show spell point cost next to each spell
+- [ ] Smoke test: cast spells via both menu and manual entry
+
+### v2.1.0 — Quality of Life: Save Anywhere
+
+Second biggest complaint: can only save at the Guild. Add save/load
+from any location.
+
+- [ ] Modify save routine to work outside Guild
+- [ ] Add save confirmation prompt
+- [ ] Ensure load restores position correctly
+- [ ] Smoke test: save in dungeon, reload, verify position
+
+### v2.2.0 — Quality of Life: Auto-Map
+
+Getting lost is the core frustration. Add a simple auto-map that
+tracks explored tiles.
+
+- [ ] Reserve memory for visited-tiles bitmap
+- [ ] Mark tiles as visited on movement
+- [ ] Add key to toggle map display
+- [ ] Display map using screen attributes (minimal graphics needed)
+- [ ] Smoke test: explore city, verify map tracks movement
+
+### v2.3.0 — Combat Speed & Auto-Battle
+
+Combat grind is tedious. Add speed controls and auto-repeat.
+
+- [ ] Add fast-forward key to skip combat animations
+- [ ] Add "repeat last action" option per hero
+- [ ] Add party auto-attack (all heroes attack, no prompts)
+- [ ] Smoke test: fight 10 encounters, verify speed + auto work
+
+### v2.4.0 — UI Improvements
+
+Modern expectations for feedback and clarity.
+
+- [ ] Show HP bars or numeric HP in party display
+- [ ] Show enemy group count and HP estimate during combat
+- [ ] Highlight active hero during combat round
+- [ ] Add status icons for poison/paralysis/etc
+- [ ] Smoke test: all status conditions display correctly
+
+### v2.5.0 — Standalone Mac App (Embedded Emulator)
+
+No native ZX Spectrum → ARM port exists. The approach: embed the Fuse
+emulator library into a Swift/Cocoa wrapper that auto-loads the game.
+
+- [ ] Research libfuse / libspectrum API for embedding
+- [ ] Create Swift wrapper that initializes Fuse programmatically
+- [ ] Auto-load bt.tap on launch (no manual File > Open)
+- [ ] Map keyboard controls to modern layout (WASD + arrow keys)
+- [ ] Add app icon and proper macOS menu bar
+- [ ] Package as .app bundle with code signing
+- [ ] Smoke test: double-click app, game starts, controls work
+
+### v2.6.0 — Key Remapping & Modern Controls
+
+ZX Spectrum's 5/6/7/8 and I/J/K/L are unintuitive.
+
+- [ ] Add WASD support for movement
+- [ ] Add arrow key support for movement
+- [ ] Add number pad support for combat options
+- [ ] Make key mapping configurable (stored in settings)
+- [ ] Smoke test: all control schemes work in city + combat
+
+### v2.7.0 — Difficulty Options
+
+The 2018 remaster proved players want options.
+
+- [ ] Add "Classic" mode (original behavior, default)
+- [ ] Add "Modern" mode:
+  - Reduced XP requirements for leveling
+  - Party gold pool (shared gold)
+  - Status conditions curable by rest (not just Temple)
+  - Reduced encounter rate
+- [ ] Mode selection at game start
+- [ ] Smoke test: verify both modes play correctly
+
+### v2.8.0 — Enhanced Graphics (if feasible)
+
+The ZX Spectrum has severe graphics constraints (256x192, 2 colors per
+8x8 block). But within those constraints:
+
+- [ ] Improve dungeon wall textures (more detail in existing tiles)
+- [ ] Add unique building graphics (Guild, Shoppe, Temple look different)
+- [ ] Improve monster portraits where possible
+- [ ] Add title screen / splash art
+- [ ] Smoke test: visual improvements display correctly
+
+### v2.9.0 — Sound & Music
+
+The ZX Spectrum beeper is limited but can do more than silence.
+
+- [ ] Add combat start jingle
+- [ ] Add victory/defeat sounds
+- [ ] Add ambient dungeon sounds
+- [ ] Improve bard song playback
+- [ ] Smoke test: all sounds play at correct triggers
+
+### v3.0.0 — Polish & Release
+
+- [ ] Final pass on all features
+- [ ] Write player-facing README/manual for enhanced version
+- [ ] Create "What's New" document comparing to original
+- [ ] Tag as stable release
+- [ ] Create GitHub Release with .app bundle download
+
+---
+
 ## Notes
 
 - The original reverse engineer used an interceptor/debugger hack (`hack_interceptor.asm`,
