@@ -14,7 +14,8 @@
       "Bash(sed -i '' 's/VAR_04\\\\b/VAR_DAY_OUTER_CTR/g' code/*.asm levels/city/code/*.asm BT_game.asm)",
       "Bash(sed -i '' 's/VAR_06\\\\b/VAR_DISPLAY_STATE/g' code/*.asm levels/city/code/*.asm BT_game.asm)",
       "Bash(sed -i '' 's/VAR_07\\\\b/VAR_DUNGEON_LEVEL/g' code/*.asm levels/city/code/*.asm BT_game.asm)",
-      "Bash(sed -i '' 's/VAR_08\\\\b/VAR_DAY_MID_CTR/g' code/*.asm levels/city/code/*.asm BT_game.asm)"
+      "Bash(sed -i '' 's/VAR_08\\\\b/VAR_DAY_MID_CTR/g' code/*.asm levels/city/code/*.asm BT_game.asm)",
+      "Bash(python3:*)"
     ]
   }
 }
