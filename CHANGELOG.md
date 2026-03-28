@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.2.0] - 2026-03-27
+
+### Added
+- Makefile for cross-platform builds (`make` / `make verify` / `make clean`)
+- `.gitignore` for build artifacts
+
+### Verified
+- SjASMPlus v1.22.0 compiles cleanly on macOS ARM (Apple Silicon M3)
+- Recompiled binary matches original byte-for-byte (`NO vital diffs found`)
+- Build produces both `bt.tap` (ZX Spectrum tape image) and `bt.bin` (raw binary)
+
 ## [0.1.0] - 2026-03-27
 
 ### Added

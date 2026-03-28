@@ -46,14 +46,14 @@ original memory dumps in `original/` for byte-level verification.
 
 ## Milestones
 
-### v0.2.0 — Build & Run on macOS
+### v0.2.0 — Build & Run on macOS (DONE)
 
-- [ ] Create cross-platform build script (Makefile or shell script)
-- [ ] Verify SjASMPlus compiles cleanly on macOS/ARM
-- [ ] Create `recompile/` output directory if missing
-- [ ] Verify binary diff against original dumps passes
+- [x] Create cross-platform build script (Makefile)
+- [x] Verify SjASMPlus compiles cleanly on macOS/ARM (v1.22.0)
+- [x] Create `recompile/` output directory if missing
+- [x] Verify binary diff against original dumps passes
+- [x] Add `.gitignore` for build artifacts
 - [ ] Document emulator setup (Fuse/ZEsarUX) for running the output
-- [ ] Add `.gitignore` for build artifacts
 
 ### v0.3.0 — Reverse Engineer Combat System (19 files)
 
