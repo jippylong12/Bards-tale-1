@@ -36,7 +36,7 @@ loc_7FC6:
 		pop	ix
 
 loc_7FDB:
-		ld	b, (iy+VAR_4E)
+		ld	b, (iy+VAR_ACTIVE_ENEMY)
 		xor	a
 
 		GET_B_FROM_LIST	36h

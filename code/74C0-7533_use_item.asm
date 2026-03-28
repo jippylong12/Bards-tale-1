@@ -24,7 +24,7 @@ use_item:
 
 		GET_A_FROM_TABLE	6Ah
 
-		ld	(GAME_VARIABLES + VAR_4B), a
+		ld	(GAME_VARIABLES + VAR_CURRENT_SPELL), a
 
 		RST_10_61	69h, 7
 
@@ -45,7 +45,7 @@ use_item:
 
 		ret	c
 
-		ld	(GAME_VARIABLES + VAR_53), a
+		ld	(GAME_VARIABLES + VAR_TARGET_ID), a
 
 loc_74FA:
 		CLEAR_INFO_PANEL

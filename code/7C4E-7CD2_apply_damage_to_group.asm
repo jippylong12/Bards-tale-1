@@ -48,13 +48,13 @@ loc_7C7B:
 		res	0, (hl)
 		ex	(sp), hl
 		ex	de, hl
-		ld	a, (GAME_VARIABLES + VAR_50)
+		ld	a, (GAME_VARIABLES + VAR_DAMAGE_TYPE)
 
 		cp	6
 		jr	nc, loc_7C97
 
 		xor	a
-		ld	(GAME_VARIABLES + VAR_50), a
+		ld	(GAME_VARIABLES + VAR_DAMAGE_TYPE), a
 
 		cp	d
 		jr	nz, loc_7C97

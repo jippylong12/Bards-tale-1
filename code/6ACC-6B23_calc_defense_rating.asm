@@ -4,7 +4,7 @@ loc_6ACC:
 
 		ld	a, (ENEMY+ENEMY_16)
 		call	divide_A_by_8
-		add	a, (iy+VAR_60)
+		add	a, (iy+VAR_DEFENSE_BONUS)
 
 		jr	loc_6B1D
 
@@ -28,7 +28,7 @@ loc_6AEA:
 		ld	a, 12h
 
 loc_6AEC:
-		add	a, (iy+VAR_60)
+		add	a, (iy+VAR_DEFENSE_BONUS)
 		ld	d, a
 		ld	a, c
 		ld	c, 0

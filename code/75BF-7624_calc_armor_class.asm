@@ -69,7 +69,7 @@ loc_7603:
 		inc	hl
 		add	a, (hl)
 		add	a, e
-		sub	(iy+VAR_63)
+		sub	(iy+VAR_STAT_MODIFIER)
 		jr	nc, loc_7611
 
 		xor	a

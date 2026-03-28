@@ -5,7 +5,7 @@ loc_7967:
 
 		jr	z, loc_7987
 
-		GET_GAME_VARIABLE	VAR_66			; ???
+		GET_GAME_VARIABLE	VAR_ALLY_COUNTER			; ???
 
 		jr	nz, loc_7985
 
@@ -47,10 +47,10 @@ loc_798E:
 
 		ld	a, b
 
-		cp	(iy+VAR_4C)
+		cp	(iy+VAR_CURRENT_ACTOR)
 		jr	nc, loc_799D
 
-		dec	(iy+VAR_4C)
+		dec	(iy+VAR_CURRENT_ACTOR)
 
 loc_799D:
 		cp	6
@@ -128,7 +128,7 @@ loc_79F0:
 		RST_10_5D
 
 		jr	c, loc_7A00
-		ld	(iy+VAR_4D), b
+		ld	(iy+VAR_ENEMY_COUNT), b
 
 loc_79F7:
 		GET_B_FROM_TABLE	36h

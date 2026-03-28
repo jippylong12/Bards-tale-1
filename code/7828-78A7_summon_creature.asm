@@ -11,7 +11,7 @@ loc_782C:
 loc_7832:
 		CLEAN_ALLY_MEMORY
 
-		ld	a, (GAME_VARIABLES + VAR_53)
+		ld	a, (GAME_VARIABLES + VAR_TARGET_ID)
 		and	7Fh
 		ld	c, a
 
@@ -62,7 +62,7 @@ loc_7864:
 		FIND_HERO_BY_B
 
 		xor	a
-		ld	(GAME_VARIABLES + VAR_4F), a
+		ld	(GAME_VARIABLES + VAR_DISPLAY_COUNT), a
 		ld	a, l
 
 		PRINT_EMPTY

@@ -18,7 +18,7 @@ loc_84A4:
 		djnz	loc_84A4
 
 loc_84AC:
-		ld	b, (iy+VAR_53)
+		ld	b, (iy+VAR_TARGET_ID)
 
 		FIND_HERO_BY_B
 

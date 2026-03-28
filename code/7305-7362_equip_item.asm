@@ -79,7 +79,7 @@ loc_7353:
 		call	sub_75BF
 		ld	a, b
 
-		cp	(iy+VAR_4C)
+		cp	(iy+VAR_CURRENT_ACTOR)
 		ret	nz
 
 		jp	sub_7A67

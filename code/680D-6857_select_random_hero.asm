@@ -37,7 +37,7 @@ loc_6821:
 		or	a
 		jr	z, loc_683A
 
-		GET_GAME_VARIABLE	VAR_66			; ???
+		GET_GAME_VARIABLE	VAR_ALLY_COUNTER			; ???
 
 		jr	nz, loc_6843
 

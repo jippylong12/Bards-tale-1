@@ -43,7 +43,7 @@ loc_6651:
 		PRINT_NUM_FROM_E
 
 		dec	e
-		ld	(iy+VAR_4F), e
+		ld	(iy+VAR_DISPLAY_COUNT), e
 
 		GET_C_FROM_TABLE	41h
 

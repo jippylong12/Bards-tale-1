@@ -49,7 +49,7 @@ loc_66C9:
 		jr	nz, loc_66C9
 
 		dec	a
-		ld	(GAME_VARIABLES + VAR_4F), a
+		ld	(GAME_VARIABLES + VAR_DISPLAY_COUNT), a
 
 		PRINT_CRLF_AND_MESSAGE	0Ch			; "The"
 

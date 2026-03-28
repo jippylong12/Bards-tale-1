@@ -170,14 +170,11 @@ All 75 code UNKNOWN routines identified and renamed.
 Completing the remaining symbolic naming so the source reads like real code,
 not hex offsets. Each patch version is independently verifiable.
 
-### v1.1.0 — Name Game Variables (70 unnamed)
+### v1.1.0 — Name Game Variables (70 unnamed) (DONE)
 
-The `VAR_xx` constants in `constants.asm` are hex offsets with no meaning.
-Now that all routines are identified, we can trace how each variable is used
-and give it a proper name.
-
-- [ ] Trace and name all 70 `VAR_xx` game variables in `constants.asm`
-- [ ] Verify binary matches after all renames
+- [x] Traced and named all 70 `VAR_xx` game variables in `constants.asm`
+- [x] Updated all references across 100+ assembly files
+- [x] Verified binary matches after all renames
 
 ### v1.2.0 — Name Character & Enemy Struct Offsets (12 unnamed)
 

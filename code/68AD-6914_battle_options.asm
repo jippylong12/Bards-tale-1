@@ -5,7 +5,7 @@ battle_options:						; loc_68AD
 
 		ld	(iy+VAR_CURSOR_ROW), 6
 
-		GET_GAME_VARIABLE	VAR_5A		; ???
+		GET_GAME_VARIABLE	VAR_AMBUSH_FLAG		; ???
 
 		jr	nz, option_party_attack
 

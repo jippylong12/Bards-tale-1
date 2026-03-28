@@ -8,7 +8,7 @@ loc_8607:
 		jr	nz, loc_8618
 
 		ld	(___table_88), a
-		inc	(iy+VAR_40)
+		inc	(iy+VAR_REVEAL_FLAG)
 
 loc_8618:
 		jp	print_ellipsis

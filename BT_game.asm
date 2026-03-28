@@ -94,7 +94,7 @@ PARTY_FILE:
 
 sub_6CAB:
 		add	a, 42h ; 'B'
-		ld	(GAME_VARIABLES + VAR_70), a
+		ld	(GAME_VARIABLES + VAR_TARGET_SELECT), a
 
 		ret
 
@@ -103,7 +103,7 @@ sub_6CAB:
 
 sub_6CB1:
 		push	af
-		ld	hl, GAME_VARIABLES + VAR_70
+		ld	hl, GAME_VARIABLES + VAR_TARGET_SELECT
 		ld	b, 3
 		call	nullify_buffer
 		pop	af
@@ -301,7 +301,7 @@ dyn_proc_54:						; RST_10_29
 
 
 sub_82D2:
-		ld	(iy+VAR_10), 0
+		ld	(iy+VAR_SPELL_ACTIVE), 0
 
 		ret
 
@@ -369,7 +369,7 @@ eye_setup:
 		rla
 		rla
 		and     3
-		ld      (GAME_VARIABLES + VAR_59), a
+		ld      (GAME_VARIABLES + VAR_SPEED_LOOKUP), a
 		ld      a, b
 
 		ADD_RND_NUMBER
@@ -386,7 +386,7 @@ shield_setup:
 		ADD_RND_NUMBER
 
 		ld	(GAME_VARIABLES + VAR_SHIELD), a
-		ld	(iy+VAR_55), 2
+		ld	(iy+VAR_ICON_CODE), 2
 
 		SHOW_ICON	ICON_SHIELD
 
@@ -402,7 +402,7 @@ shield_setup:
 
 ; -------------------------------------
 loc_87D0:
-		ld	hl, GAME_VARIABLES + VAR_60
+		ld	hl, GAME_VARIABLES + VAR_DEFENSE_BONUS
 
 		GET_B_FROM_TABLE	59h
 
@@ -446,7 +446,7 @@ dyn_proc_80:				; RST_10_49
 		xor	a
 		ld	h, a
 		ld	l, a
-		ld	(GAME_VARIABLES + VAR_50), a
+		ld	(GAME_VARIABLES + VAR_DAMAGE_TYPE), a
 		ret
 ; -------------------------------------
 
@@ -601,7 +601,7 @@ loc_C116:
 
 loc_C11D:
 		dec	e
-		ld	a, (GAME_VARIABLES + VAR_4F)
+		ld	a, (GAME_VARIABLES + VAR_DISPLAY_COUNT)
 		and	a
 		jr	z, loc_C0B0
 

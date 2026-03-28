@@ -22,7 +22,7 @@ cast_spell:
 		ret	c
 
 loc_7424:
-		ld	(GAME_VARIABLES + VAR_53), a
+		ld	(GAME_VARIABLES + VAR_TARGET_ID), a
 
 		CLEAR_INFO_PANEL
 

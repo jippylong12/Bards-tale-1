@@ -161,7 +161,7 @@ loc_85C7:
 		PRINT_MESSAGE	69h			; "and"
 
 		xor	a
-		ld	(GAME_VARIABLES + VAR_4F), a
+		ld	(GAME_VARIABLES + VAR_DISPLAY_COUNT), a
 
 		GET_B_FROM_TABLE	41h
 

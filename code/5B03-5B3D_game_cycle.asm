@@ -4,7 +4,7 @@ game_cycle:
 		RST_10_4A
 
 		call	sub_C192
-		ld	(iy+VAR_40), 0
+		ld	(iy+VAR_REVEAL_FLAG), 0
 
 loop_city_walk:
 		halt
@@ -28,7 +28,7 @@ loop_city_walk:
 		ENDIF
 
 city_ambush:
-		ld	(GAME_VARIABLES + VAR_5A), a
+		ld	(GAME_VARIABLES + VAR_AMBUSH_FLAG), a
 		call	combat_foes
 
 		RST_10_4B

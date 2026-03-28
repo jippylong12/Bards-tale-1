@@ -73,7 +73,7 @@ loc_6BFA:
 
 loc_6C15:
 		call	print_group
-		ld	a, (GAME_VARIABLES + VAR_70)
+		ld	a, (GAME_VARIABLES + VAR_TARGET_SELECT)
 		dec	a
 
 		PRINT_WITH_CODES
@@ -105,7 +105,7 @@ loc_6C31:
 loc_6C35:
 		call	sub_6CAB
 		call	print_group
-		ld	a, (GAME_VARIABLES + VAR_70)
+		ld	a, (GAME_VARIABLES + VAR_TARGET_SELECT)
 		dec	a
 
 		PRINT_WITH_CODES
@@ -133,7 +133,7 @@ loc_6C53:
 		PRINT_CRLF_AND_MESSAGE	48h			; "[ext] to abort
 
 loc_6C5B:
-		ld	hl, GAME_VARIABLES + VAR_6E
+		ld	hl, GAME_VARIABLES + VAR_MEMBER_NUM
 
 		WAIT_KEY_DOWN
 

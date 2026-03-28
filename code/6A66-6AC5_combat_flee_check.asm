@@ -3,7 +3,7 @@ loc_6A66:
 
 		jr	nc, dyn_proc_55
 
-		ld	(iy+VAR_53), 1
+		ld	(iy+VAR_TARGET_ID), 1
 
 		RST_10_2A
 
@@ -13,7 +13,7 @@ loc_6A66:
 		or	a
 		jr	z, loc_6A7E
 
-		inc	(iy+VAR_53)
+		inc	(iy+VAR_TARGET_ID)
 
 		RST_10_2A
 
@@ -36,7 +36,7 @@ dyn_proc_55:							; RST_10_2A
 
 		call	loc_6AB2
 		ld	l, a
-		ld	a, (iy+VAR_53)
+		ld	a, (iy+VAR_TARGET_ID)
 		push	hl
 		call	loc_6ACC
 
@@ -45,7 +45,7 @@ dyn_proc_55:							; RST_10_2A
 loc_6A96:
 		call	loc_6ACC
 		ld	l, a
-		ld	a, (iy+VAR_53)
+		ld	a, (iy+VAR_TARGET_ID)
 		push	hl
 		call	loc_6AB2
 

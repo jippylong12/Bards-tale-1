@@ -1,12 +1,12 @@
 loc_6746:
-		GET_GAME_VARIABLE	VAR_61			; ???
+		GET_GAME_VARIABLE	VAR_INITIATIVE_FLAG			; ???
 
 		jr	z, loc_6758
 
 		ld	hl, addr_FDD6
 		ld	b, 7
 		call	nullify_buffer
-		ld	(GAME_VARIABLES + VAR_61), a
+		ld	(GAME_VARIABLES + VAR_INITIATIVE_FLAG), a
 
 		jr	loc_67C6
 
@@ -180,7 +180,7 @@ loc_6802:
 		cp	4
 		ret	nc
 
-		cp	(iy+VAR_4D)
+		cp	(iy+VAR_ENEMY_COUNT)
 		ret	nc
 
 		inc	b

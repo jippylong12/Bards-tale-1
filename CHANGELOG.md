@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.1.0] - 2026-03-28
+
+### Named (70 game variables)
+All `VAR_xx` hex offsets in `constants.asm` replaced with meaningful names.
+References updated across 100+ assembly files.
+
+Examples: `VAR_00` → `VAR_PARTY_SIZE`, `VAR_53` → `VAR_TARGET_ID`,
+`VAR_4D` → `VAR_ENEMY_COUNT`, `VAR_10` → `VAR_SPELL_ACTIVE`,
+`VAR_38`/`VAR_39` → `VAR_VIEW_Y_OFFSET`/`VAR_VIEW_X_OFFSET` (3D rendering)
+
+Variable groups identified: day/night cycle (5 vars), spell system (6),
+combat state (6), damage pipeline (6), 3D view (2), treasure/loot (5)
+
+### Verified
+- Binary still matches original after all renames
+
 ## [1.0.0] - 2026-03-28
 
 ### Milestone
