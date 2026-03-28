@@ -66,7 +66,7 @@ turn_right:
 		ld	(hl), a
 
 move_execute:
-		call	show_compass
+		call	show_coords			; v2.4.0: show coordinates + compass
 		jp	dyn_proc_81
 ; -------------------------------------
 

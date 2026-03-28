@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.4.0] - 2026-03-28
+
+### Added
+- **Coordinate display** — N/S and E/W grid position shown after every movement. Displays in top-right corner as "X,Y". No need to open the location info screen to know where you are.
+
 ## [2.3.0] - 2026-03-28
 
 ### Added

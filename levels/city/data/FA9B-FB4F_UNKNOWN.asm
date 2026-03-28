@@ -56,6 +56,38 @@ ambush_gate:
 no_monsters_flag:
 		db	0				; 0 = normal, 1 = no city monsters
 
+; --- Show coordinates after movement (v2.4.0) ---
+show_coords:
+		push	af
+		push	hl
+
+		; Set cursor to bottom-right area (row 0, col 26)
+		ld	hl, 001Ah
+		ld	(GAME_VARIABLES + VAR_CURSOR_ROW), hl
+
+		; Print N/S coordinate
+		ld	e, (iy+VAR_COORD_SO_NO)
+
+		PRINT_NUM_FROM_E
+
+		; Print separator
+		ld	a, ','
+
+		PRINT_WITH_CODES
+
+		; Print E/W coordinate
+		ld	e, (iy+VAR_COORD_WE_EA)
+
+		PRINT_NUM_FROM_E
+
+		PRINT_SPACE
+
+		pop	hl
+		pop	af
+
+		; Call original show_compass
+		jp	show_compass
+
 ; --- Pad remaining free space with zeros ---
 FREE_SPACE_END:
 		ds $FB50 - FREE_SPACE_END, 0

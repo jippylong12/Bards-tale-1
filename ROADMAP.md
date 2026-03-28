@@ -284,15 +284,11 @@ These modify only a few bytes each and don't require new routines.
 - [x] ~25 bytes used in free space (125 remaining)
 - [x] Smoke tested: F toggles, encounters stop/resume
 
-#### v2.4.0 — Show Coordinates on Screen
+#### v2.4.0 — Show Coordinates on Screen (DONE)
 
-The `show_location_info` routine already prints "You face [direction]"
-but only when you press a specific key sequence. Add persistent
-coordinate display.
-
-- [ ] Add coordinate print call after each movement
-- [ ] Uses existing show_location_info code, just called more often
-- [ ] Smoke test: coordinates update as you move
+- [x] Coordinates (N/S,E/W) displayed after every move/turn
+- [x] Hooked into move_execute, prints before compass update
+- [x] ~30 bytes used in free space (~95 remaining)
 
 ---
 
