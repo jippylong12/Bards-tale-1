@@ -11,10 +11,9 @@ movement:
 		cp	'K'
 		jr	z, kick_door
 
-		cp	'I'
-		jr	z, move_forward
-
-		ret
+		jp	wasd_movement		; check I/W/A/S/D in extended handler
+		nop
+		nop
 ; -------------------------------------
 
 move_forward:
