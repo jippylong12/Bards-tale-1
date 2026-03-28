@@ -55,30 +55,30 @@ original memory dumps in `original/` for byte-level verification.
 - [x] Add `.gitignore` for build artifacts
 - [x] Document emulator setup (Fuse for macOS) in README
 
-### v0.3.0 — Reverse Engineer Combat System (19 files)
+### v0.3.0 — Reverse Engineer Combat System (19 files) (DONE)
 
-The combat routines are clustered together and reference each other heavily,
-making them a natural batch.
+All 19 combat routines identified, renamed, and verified.
 
-- [ ] `6746-680C` — calculate combat initiative
-- [ ] `680D-6857` — combat setup/pre-battle
-- [ ] `6977-69B7` — handle battle actions (attack/hide)
-- [ ] `6A03-6A26` — combat action processing
-- [ ] `6A27-6A48` — combat action processing (continued)
-- [ ] `6A66-6AC5` — combat damage calculation
-- [ ] `6ACC-6B23` — combat results/aftermath
-- [ ] `6BC2-6C82` — combat spell effects
-- [ ] `6D05-6D2B` — find equipped special weapon
-- [ ] `7144-719A` — monster magic/spell casting
-- [ ] `719B-71AF` — combat status effects
-- [ ] `7906-794C` — post-combat processing
-- [ ] `794D-7966` — post-combat rewards
-- [ ] `7967-7A31` — experience/level processing
-- [ ] `7A67-7A9D` — combat cleanup
-- [ ] `7A9E-7AB7` — combat cleanup (continued)
-- [ ] `7F79-7FB2` — combat flow control
-- [ ] `7FB3-7FF1` — combat flow control (continued)
-- [ ] `7FF2-8064` — combat flow control (continued)
+- [x] `6746-680C` — calculate_combat_initiative
+- [x] `680D-6857` — select_random_hero (enemy targeting)
+- [x] `6977-69B7` — handle_battle_actions (attack/hide)
+- [x] `6A03-6A26` — select_spell_target
+- [x] `6A27-6A48` — check_party_alive
+- [x] `6A66-6AC5` — combat_flee_check
+- [x] `6ACC-6B23` — calc_defense_rating
+- [x] `6BC2-6C82` — select_combat_target (UI)
+- [x] `6D05-6D2B` — find_special_weapon
+- [x] `7144-719A` — lookup_addr_table (spell/ability dispatch)
+- [x] `719B-71AF` — print_combat_actor
+- [x] `73A6-73E7` — process_action_key (menu key handler)
+- [x] `7906-794C` — party_disbelieve (illusion check)
+- [x] `794D-7966` — spend_spell_points
+- [x] `7967-7A31` — post_combat_cleanup
+- [x] `7A67-7A9D` — process_special_event
+- [x] `7A9E-7AB7` — find_equipped_by_type
+- [x] `7F79-7FB2` — award_experience
+- [x] `7FB3-7FF1` — enemy_joins_party
+- [x] `7FF2-8064` — process_bard_song
 
 ### v0.4.0 — Reverse Engineer Encounter Generation (5 files)
 
@@ -86,7 +86,6 @@ making them a natural batch.
 - [ ] `669A-6705` — process enemy advance
 - [ ] `5C17-5C50` — convert stats to ranks/thresholds
 - [ ] `64CA-64DB` — check item effect flags
-- [ ] `73A6-73E7` — action dispatch table handler
 
 ### v0.5.0 — Reverse Engineer Character/Party System (14 files)
 

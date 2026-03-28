@@ -71,22 +71,22 @@ PARTY_FILE:
 		include "code/6706-6712_swap_byte_buffer.asm"
 		include "code/6713-6733_show_some_pictext.asm"
 		include "code/6734-6745_clear_txt_buffer.asm"
-		include "code/6746-680C___UNKNOWN.asm"
-		include "code/680D-6857___UNKNOWN.asm"
+		include "code/6746-680C_calc_combat_initiative.asm"
+		include "code/680D-6857_select_random_hero.asm"
 		include "code/6858-68AC_fight_or_run.asm"
 		include "code/68AD-6914_battle_options.asm"
 		include "code/6915-6976_option_is_found.asm"
-		include "code/6977-69B7___UNKNOWN.asm"
+		include "code/6977-69B7_handle_battle_actions.asm"
 		include "code/69B8-6A02_battle_play_tune.asm"
-		include "code/6A03-6A26___UNKNOWN.asm"
-		include "code/6A27-6A48___UNKNOWN.asm"
+		include "code/6A03-6A26_select_spell_target.asm"
+		include "code/6A27-6A48_check_party_alive.asm"
 		include "code/6A49-6A65_get_rnd_numbers.asm"
-		include "code/6A66-6AC5___UNKNOWN.asm"
+		include "code/6A66-6AC5_combat_flee_check.asm"
 		include "code/6AC6-6ACB_divide_A_by_8.asm"
-		include "code/6ACC-6B23___UNKNOWN.asm"
+		include "code/6ACC-6B23_calc_defense_rating.asm"
 		include "code/6B24-6B64_print_hero_items.asm"
 		include "code/6B65-6BC1_process_spell.asm"
-		include "code/6BC2-6C82___UNKNOWN.asm"
+		include "code/6BC2-6C82_select_combat_target.asm"
 		include "code/6C83-6CAA_print_memb_num.asm"
 
 ; -------------------------------------
@@ -115,7 +115,7 @@ sub_6CB1:
 		include "code/6CBC-6CCE_count_heroes.asm"
 		include "code/6CCF-6CD6_print_group.asm"
 		include "code/6CD7-6D04_check_equipped.asm"
-		include "code/6D05-6D2B___UNKNOWN.asm"
+		include "code/6D05-6D2B_find_special_weapon.asm"
 
 ; -------------------------------------
 
@@ -166,8 +166,8 @@ sub_713D:
 		jp	loc_714B
 ; -------------------------------------
 
-		include "code/7144-719A___UNKNOWN.asm"
-		include "code/719B-71AF___UNKNOWN.asm"
+		include "code/7144-719A_lookup_addr_table.asm"
+		include "code/719B-71AF_print_combat_actor.asm"
 		include "code/71B0-7226_print_hero_stats.asm"
 		include "code/7227-722C_print_and_wait.asm"
 		include "code/722D-72DC_trade_gold.asm"
@@ -176,7 +176,7 @@ sub_713D:
 		include "code/7305-7362_equip_item.asm"
 		include "code/7363-737E_enter_number.asm"
 		include "code/737F-73A5_print_magic_attrs.asm"
-		include "code/73A6-73E7___UNKNOWN.asm"
+		include "code/73A6-73E7_process_action_key.asm"
 
 		include "tables/73E8-7405_procs_actions.asm"
 
@@ -250,13 +250,13 @@ sub_7785:
 		include "code/78A8-78CB___UNKNOWN.asm"
 		include "code/78CC-78D9___UNKNOWN.asm"
 		include "code/78DA-7905_process_poison.asm"
-		include "code/7906-794C___UNKNOWN.asm"
-		include "code/794D-7966___UNKNOWN.asm"
-		include "code/7967-7A31___UNKNOWN.asm"
+		include "code/7906-794C_party_disbelieve.asm"
+		include "code/794D-7966_spend_spell_points.asm"
+		include "code/7967-7A31_post_combat_cleanup.asm"
 		include "code/7A32-7A49_clean_ally_memory.asm"
 		include "code/7A4A-7A66_clean_hero_memory.asm"
-		include "code/7A67-7A9D___UNKNOWN.asm"
-		include "code/7A9E-7AB7___UNKNOWN.asm"
+		include "code/7A67-7A9D_process_special_event.asm"
+		include "code/7A9E-7AB7_find_equipped_by_type.asm"
 		include "code/7AB8-7BEC___UNKNOWN.asm"
 		include "code/7BED-7BF3_divide_A_by_16.asm"
 		include "code/7BF4-7C4D___UNKNOWN.asm"
@@ -270,9 +270,9 @@ sub_7785:
 		include "code/7DB8-7DF8___UNKNOWN.asm"
 		include "code/7DF9-7E37___UNKNOWN.asm"
 		include "code/7E38-7F78_enemies_killed.asm"
-		include "code/7F79-7FB2___UNKNOWN.asm"
-		include "code/7FB3-7FF1___UNKNOWN.asm"
-		include "code/7FF2-8064___UNKNOWN.asm"
+		include "code/7F79-7FB2_award_experience.asm"
+		include "code/7FB3-7FF1_enemy_joins_party.asm"
+		include "code/7FF2-8064_process_bard_song.asm"
 		include "code/8065-806C_dummy_pause.asm"
 
 ; -------------------------------------

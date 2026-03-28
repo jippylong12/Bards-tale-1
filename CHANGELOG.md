@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.3.0] - 2026-03-27
+
+### Identified (20 routines — combat system)
+- `select_random_hero` — enemy AI picks a living hero to target
+- `handle_battle_actions` — processes attack and rogue hide options
+- `select_spell_target` — "Cast at" prompt for choosing enemy group
+- `check_party_alive` — returns whether any hero still has HP
+- `combat_flee_check` — compares party vs enemy speed to determine escape
+- `calc_defense_rating` — effective AC from level, class, equipment, randomness
+- `select_combat_target` — full target selection UI (hero numbers, group letters)
+- `find_special_weapon` — searches inventory for equipped special attack item
+- `calc_combat_initiative` — turn order from class, level, combat wins + randomness
+- `lookup_addr_table` — resolves index to address for spell/ability dispatch
+- `print_combat_actor` — prints acting hero name or enemy group letter
+- `process_action_key` — generic menu key dispatcher (E/T/D/P/N keys)
+- `party_disbelieve` — "The party disbelieves..." illusion check
+- `spend_spell_points` — deducts spell cost (halved with certain equipment)
+- `post_combat_cleanup` — removes dead heroes, reorganizes groups, resets state
+- `process_special_event` — handles triggered events (lighting, bard effects)
+- `find_equipped_by_type` — generic inventory search by special attack type
+- `award_experience` — distributes XP by party size, increments combat wins
+- `enemy_joins_party` — random enemy joins roster, prints "jumps into your party!"
+- `process_bard_song` — applies song effects (stat boosts, healing, AC)
+
+### Verified
+- Binary still matches original after all renames
+
 ## [0.2.0] - 2026-03-27
 
 ### Added
