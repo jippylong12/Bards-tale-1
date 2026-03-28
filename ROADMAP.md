@@ -253,6 +253,7 @@ smoke test.
 | v2.0.0 WASD movement | 31 | 31 | 150 |
 | v2.3.0 Monster toggle | 26 | 57 | 124 |
 | v2.4.0 Coordinate display | 40 | 97 | 84 |
+| v3.0.0 Spell code hints | 81 | 178 | 4 |
 
 ### Verification Strategy (post-v1.x)
 
@@ -306,15 +307,14 @@ These modify only a few bytes each and don't require new routines.
 These require new routines in the ~181 bytes of free space, or clever
 reuse of existing code. May require multiple attempts.
 
-#### v3.0.0 — Spell Code Hint on Cast Screen
+#### v3.0.0 — Spell Code Hint on Cast Screen (DONE)
 
-When casting, show the 4-letter codes of known spells (compact list).
-Needs ~80-120 bytes of new code in free space at $FA9B.
-
-- [ ] Write spell list walker routine in free space
-- [ ] Hook into who_cast_spell before "Spell to cast:" prompt
-- [ ] Filter by hero's spell level per class
-- [ ] Smoke test: cast screen shows known spell codes
+- [x] Spell codes displayed before "Spell to cast:" prompt
+- [x] Auto-detects hero's casting class via GET_ATTR_BY_A
+- [x] Walks SPELL_NAMES table, prints codes up to hero's level
+- [x] Hooked at loc_7545 (after PUSH_REGS) — works for both combat and city casting
+- [x] 81 bytes used in free space (4 remaining)
+- [x] Smoke tested: codes shown in combat, casting works correctly
 
 #### v3.1.0 — Party Auto-Attack
 

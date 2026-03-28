@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [3.0.0] - 2026-03-28
+
+### Added
+- **Spell code hints** — known 4-letter spell codes shown before "Spell to cast:" prompt in combat. Auto-detects hero's casting class and level, displays only available spells. 81 bytes in free space, 4 remaining.
+
 ## [2.4.0] - 2026-03-28
 
 ### Added

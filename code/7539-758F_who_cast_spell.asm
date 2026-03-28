@@ -13,9 +13,9 @@ who_cast_spell:
 loc_7545:
 		PUSH_REGS
 
-		ld	e, a
-		ld	a, c
-		ld	(spell_result+2), a
+		call	show_spell_hints	; v3.0.0: spell codes + relocated setup
+		nop
+		nop
 
 		PRINT_CRLF_AND_MESSAGE	4	; "Spell to cast:"
 
