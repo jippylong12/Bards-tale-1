@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.0.0] - 2026-03-28
+
+### Milestone
+- **All 75 code routines identified** — zero UNKNOWN code files remain
+- Complete reverse engineering of: combat, encounters, character/party, magic/damage, spell effects, city locations, 3D rendering, UI/display
+- Binary verified byte-identical to original at every version
+- 26 data/table UNKNOWN files remain (raw data blobs, not code)
+
 ## [0.9.0] - 2026-03-28
 
 ### Identified (14 routines — city/level code)

@@ -5,7 +5,7 @@
 Partial reverse engineering of **The Bard's Tale** (1988 ZX Spectrum port).
 Z80 assembly, compiled with SjASMPlus. Original work done 2020-2022.
 
-## Current State (v0.1.0)
+## Current State (v1.0.0)
 
 The codebase contains a disassembly of the full game binary (`$5B00-$FFFF`) with the
 original memory dumps in `original/` for byte-level verification.
@@ -157,15 +157,19 @@ All code UNKNOWN files now identified. Only data/table UNKNOWN files remain.
 - [x] `F1A9-F258` — render_sprite_3d (3D sprite decoder and renderer)
 - [x] `F259-F28E` — decode_sprite_mask (pixel transparency mask decoder)
 
-### v1.0.0 — Full Documentation & Variable Naming
+### v1.0.0 — Code Identification Complete (DONE)
 
+All 75 code UNKNOWN routines identified and renamed.
+
+- [x] Verify final binary still matches original
+
+#### Future work (not blocking 1.0.0)
 - [ ] Name all `VAR_xx` game variables
 - [ ] Name all `CHAR_xx` and `ENEMY_xx` struct offsets
 - [ ] Name all `___table_xx` data tables
 - [ ] Document RST 10h dispatch system architecture
 - [ ] Create cross-reference map (caller/callee graph)
 - [ ] Write architecture overview document
-- [ ] Verify final binary still matches original
 
 ---
 
@@ -173,12 +177,12 @@ All code UNKNOWN files now identified. Only data/table UNKNOWN files remain.
 
 | Category | Identified | Unknown | Total |
 |----------|-----------|---------|-------|
-| Core code | 46 | 61 | 107 |
-| City/level code | 26 | 14 | 40 |
-| Data files | — | — | 24 |
+| Core code | 107 | 0 | 107 |
+| City/level code | 40 | 0 | 40 |
+| Data files | — | 26 | 26 |
 | Tables | — | — | 12 |
 | Graphics | — | — | 2 |
-| **Total** | **72** | **75** | **185** |
+| **Code Total** | **147** | **0** | **147** |
 
 ## Notes
 
