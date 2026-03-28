@@ -198,12 +198,12 @@ not hex offsets. Each patch version is independently verifiable.
 - [x] ARCHITECTURE.md: Spell system + effect dispatch
 - [x] ARCHITECTURE.md: 3D rendering pipeline
 
-### v1.5.0 — Cross-Reference Map
+### v1.5.0 — Cross-Reference Map (DONE)
 
-- [ ] Generate caller/callee graph for all named routines
-- [ ] Document which spells map to which effect handlers
-- [ ] Document city location dispatch table
-- [ ] Add cross-reference section to README or separate ARCHITECTURE.md
+- [x] CROSS_REFERENCE.md: All 80+ spells mapped to effect handlers
+- [x] CROSS_REFERENCE.md: City location dispatch table
+- [x] CROSS_REFERENCE.md: Main game loop call graph
+- [x] CROSS_REFERENCE.md: Full combat call graph
 
 ---
 

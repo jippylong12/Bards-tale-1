@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.5.0] - 2026-03-28
+
+### Added
+- `CROSS_REFERENCE.md` — complete cross-reference map:
+  - All 80+ spells (4-letter codes) mapped to their effect handler routines
+  - City location dispatch table (12 building types → handler routines)
+  - Main game loop call graph (from INIT_GAME through movement/combat)
+  - Full combat call graph (encounter → initiative → actions → damage → XP)
+
+### Milestone 2 Complete
+All documentation and naming cleanup finished. Every symbol in the codebase
+now has a meaningful name.
+
 ## [1.4.0] - 2026-03-28
 
 ### Added
