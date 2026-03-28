@@ -80,12 +80,12 @@ All 19 combat routines identified, renamed, and verified.
 - [x] `7FB3-7FF1` — enemy_joins_party
 - [x] `7FF2-8064` — process_bard_song
 
-### v0.4.0 — Reverse Engineer Encounter Generation (5 files)
+### v0.4.0 — Reverse Engineer Encounter Generation (4 files) (DONE)
 
-- [ ] `656A-65FE` — generate random encounter
-- [ ] `669A-6705` — process enemy advance
-- [ ] `5C17-5C50` — convert stats to ranks/thresholds
-- [ ] `64CA-64DB` — check item effect flags
+- [x] `656A-65FE` — generate_encounter
+- [x] `669A-6705` — enemy_group_advance
+- [x] `5C17-5C50` — calc_xp_thresholds
+- [x] `64CA-64DB` — check_item_effect
 
 ### v0.5.0 — Reverse Engineer Character/Party System (14 files)
 

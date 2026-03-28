@@ -14,7 +14,7 @@ binary_start:
 		include "code/5B8B-5BA7_print_hero_attr.asm"
 		include "code/5BA8-5BE0_get_pressed_key.asm"
 		include "code/5BE1-5C16_print_number.asm"
-		include "code/5C17-5C50___UNKNOWN.asm"
+		include "code/5C17-5C50_calc_xp_thresholds.asm"
 
 ; -------------------------------------
 		dw off_5C53
@@ -60,14 +60,14 @@ PARTY_FILE:
 
 		include "code/649C-64BF_push_pop_regs.asm"
 		include "code/64C0-64C9_get_rnd_by_param.asm"
-		include "code/64CA-64DB___UNKNOWN.asm"
+		include "code/64CA-64DB_check_item_effect.asm"
 		include "code/64DC-64F2_exec_for_heroes.asm"
 		include "code/64F3-6569_city_colors.asm"
-		include "code/656A-65FE___UNKNOWN.asm"
+		include "code/656A-65FE_generate_encounter.asm"
 		include "code/65FF-6615_zero_buffers.asm"
 		include "code/6616-6629_calculate_addr.asm"
 		include "code/662A-6699_encounter.asm"
-		include "code/669A-6705___UNKNOWN.asm"
+		include "code/669A-6705_enemy_group_advance.asm"
 		include "code/6706-6712_swap_byte_buffer.asm"
 		include "code/6713-6733_show_some_pictext.asm"
 		include "code/6734-6745_clear_txt_buffer.asm"

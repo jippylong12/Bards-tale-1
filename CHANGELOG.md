@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.4.0] - 2026-03-27
+
+### Identified (4 routines — encounter generation)
+- `generate_encounter` — builds random enemy groups: rolls for count (up to 4 groups), picks monster types from area tables, caps group size at 99, fills stat buffers. Underground areas get more groups.
+- `enemy_group_advance` — compares speed stats between adjacent enemy groups, swaps the faster one forward, prints "The [monster] advances!"
+- `calc_xp_thresholds` — loops 5 times over a threshold table at addr_9815, counts how many level boundaries a value exceeds. Used to convert raw XP into level tiers for the party.
+- `check_item_effect` — reads an item's effect value from a lookup table and ANDs it with a bitmask. Quick yes/no check for whether an item has a specific property (e.g. "does this weapon do fire damage?").
+
+### Verified
+- Binary still matches original after all renames
+
 ## [0.3.0] - 2026-03-27
 
 ### Identified (20 routines — combat system)
