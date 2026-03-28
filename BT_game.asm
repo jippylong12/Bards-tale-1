@@ -311,9 +311,9 @@ sub_82D2:
 
 		include "data/82FC-8313_UNKNOWN.asm"
 
-		include "code/8314-8412___UNKNOWN.asm"
-		include "code/8413-8496___UNKNOWN.asm"
-		include "code/8497-8517___UNKNOWN.asm"
+		include "code/8314-8412_spell_breath_attack.asm"
+		include "code/8413-8496_spell_stat_modifiers.asm"
+		include "code/8497-8517_spell_heal_and_cure.asm"
 
 ; -------------------------------------
 
@@ -323,11 +323,11 @@ loc_8518:
 
 ; -------------------------------------
 
-		include "code/851A-85EB___UNKNOWN.asm"
-		include "code/85EC-8606___UNKNOWN.asm"
-		include "code/8607-861A___UNKNOWN.asm"
-		include "code/861B-8625___UNKNOWN.asm"
-		include "code/8626-8648___UNKNOWN.asm"
+		include "code/851A-85EB_spell_summon_monster.asm"
+		include "code/85EC-8606_calc_monster_hp.asm"
+		include "code/8607-861A_spell_reveal_secret.asm"
+		include "code/861B-8625_spell_flee_effect.asm"
+		include "code/8626-8648_spell_ac_modifier.asm"
 		include "code/8649-86A9___UNKNOWN.asm"
 		include "code/86AA-86C4___UNKNOWN.asm"
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.7.0] - 2026-03-28
+
+### Identified (8 routines — spell effect handlers)
+- `spell_breath_attack` — area/breath spell: targets party or group, applies damage with status effects, prints "breathes at..." / "repelled the spell!"
+- `spell_stat_modifiers` — buff/debuff spells: AC reduction, party defense boost, attack bonuses
+- `spell_heal_and_cure` — healing: restores HP (capped at max hits), cures poison, paralysis, nuts, possession; also handles resurrection (sets HP to 1)
+- `spell_summon_monster` — creates ally from summon creature table, copies monster data into party slot, prints "[creature] appears"
+- `calc_monster_hp` — derives monster HP from the HP/AC spec table field with random modifier
+- `spell_reveal_secret` — checks underground map data for secret passages, sets reveal flag
+- `spell_flee_effect` — wraps the flee check for spell-assisted escape, "but it had no effect!" on failure
+- `spell_ac_modifier` — applies AC modification to party (VAR_62) or enemy group defense
+
+### Note
+- v0.7.0 was originally planned as "dungeon/navigation" but analysis revealed these are spell effect dispatch targets, not navigation routines
+
+### Verified
+- Binary still matches original after all renames
+
 ## [0.6.0] - 2026-03-28
 
 ### Identified (8 routines — magic/damage system)

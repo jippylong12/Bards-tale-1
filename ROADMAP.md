@@ -115,16 +115,18 @@ All 19 combat routines identified, renamed, and verified.
 - [x] `82BE-82D1` — tick_spell_duration (decrement timer, cleanup on expire)
 - [x] `82D7-82FB` — start_spell_or_song (init duration, store ID, activate)
 
-### v0.7.0 — Reverse Engineer Dungeon/Navigation System (8 files)
+### v0.7.0 — Reverse Engineer Spell Effect Handlers (8 files) (DONE)
 
-- [ ] `8314-8412` — dungeon processing (large, ~254 bytes)
-- [ ] `8413-8496` — dungeon processing
-- [ ] `8497-8517` — dungeon processing
-- [ ] `851A-85EB` — dungeon processing (large, ~209 bytes)
-- [ ] `85EC-8606` — dungeon processing
-- [ ] `8607-861A` — dungeon processing
-- [ ] `861B-8625` — dungeon processing
-- [ ] `8626-8648` — dungeon processing
+Note: originally labeled "dungeon" — turned out to be spell effect dispatch targets.
+
+- [x] `8314-8412` — spell_breath_attack (area damage + status effects)
+- [x] `8413-8496` — spell_stat_modifiers (AC/defense/attack buffs)
+- [x] `8497-8517` — spell_heal_and_cure (HP restore, cure poison/paralysis/nuts)
+- [x] `851A-85EB` — spell_summon_monster (create ally from summon table)
+- [x] `85EC-8606` — calc_monster_hp (HP from spec table + random)
+- [x] `8607-861A` — spell_reveal_secret (underground secret passage reveal)
+- [x] `861B-8625` — spell_flee_effect (spell-assisted escape)
+- [x] `8626-8648` — spell_ac_modifier (party/enemy AC buff/debuff)
 
 ### v0.8.0 — Reverse Engineer Remaining Core + Print/Display (7 files)
 
