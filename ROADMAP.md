@@ -53,7 +53,7 @@ original memory dumps in `original/` for byte-level verification.
 - [x] Create `recompile/` output directory if missing
 - [x] Verify binary diff against original dumps passes
 - [x] Add `.gitignore` for build artifacts
-- [ ] Document emulator setup (Fuse/ZEsarUX) for running the output
+- [x] Document emulator setup (Fuse for macOS) in README
 
 ### v0.3.0 — Reverse Engineer Combat System (19 files)
 
