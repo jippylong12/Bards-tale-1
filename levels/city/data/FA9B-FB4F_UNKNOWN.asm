@@ -59,9 +59,17 @@ no_monsters_flag:
 ; --- Show coordinates after movement (v2.4.0) ---
 show_coords:
 		push	af
+		push	bc
+		push	de
 		push	hl
 
-		; Set cursor to bottom-right area (row 0, col 26)
+		; Save current cursor position
+		ld	a, (GAME_VARIABLES + VAR_CURSOR_ROW)
+		push	af
+		ld	a, (GAME_VARIABLES + VAR_CURSOR_COL)
+		push	af
+
+		; Set cursor to top-right area (row 0, col 26)
 		ld	hl, 001Ah
 		ld	(GAME_VARIABLES + VAR_CURSOR_ROW), hl
 
@@ -82,7 +90,15 @@ show_coords:
 
 		PRINT_SPACE
 
+		; Restore cursor position
+		pop	af
+		ld	(GAME_VARIABLES + VAR_CURSOR_COL), a
+		pop	af
+		ld	(GAME_VARIABLES + VAR_CURSOR_ROW), a
+
 		pop	hl
+		pop	de
+		pop	bc
 		pop	af
 
 		; Call original show_compass
