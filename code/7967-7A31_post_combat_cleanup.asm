@@ -30,7 +30,7 @@ loc_7985:
 		CLEAN_ALLY_MEMORY
 
 loc_7987:
-		RST_10_2E
+		CHECK_ALL_HEROES
 
 		ret	c
 
@@ -125,7 +125,7 @@ loc_79EB:
 		jr	c, loc_798E
 
 loc_79F0:
-		RST_10_5D
+		CHECK_THREE_HEROES
 
 		jr	c, loc_7A00
 		ld	(iy+VAR_ENEMY_COUNT), b

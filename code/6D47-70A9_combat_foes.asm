@@ -185,7 +185,7 @@ loc_6E2D:
 
 		PRINT_NEWLINE
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 loc_6E36:
 		jp	loc_6D89
@@ -209,7 +209,7 @@ loc_6E48:
 		or	a
 		jr	z, loc_6E4F
 
-		RST_10_51
+		PICK_RANDOM_HERO
 
 		jr	loc_6E5A
 ; -------------------------------------
@@ -300,7 +300,7 @@ test_swing:
 		PRINT_MESSAGE	65h			; "at"
 
 test_is_missed:
-		RST_10_53
+		PRINT_ACTOR_NAME
 
 		call	loc_7AB8
 		jr	nc, loc_6EBF
@@ -362,11 +362,11 @@ loc_6EEA:
 
 		pop	de
 
-		RST_10_2E
+		CHECK_ALL_HEROES
 
 		jp	c, oh_dear_game_over
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 		jp	loc_6D89
 ; -------------------------------------
@@ -391,7 +391,7 @@ loc_6F03:
 
 		jr	nz, loc_6F22
 
-		RST_10_57
+		CALC_SPELL_FX
 
 		ld	e, 0
 
@@ -441,7 +441,7 @@ loc_6F30:
 		ld	(iy+VAR_ACTIVE_HERO), 1
 		ld	(iy+VAR_TARGET_ID), 80h
 
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		jr	c, loc_6F66
 
@@ -449,7 +449,7 @@ loc_6F30:
 
 		PRINT_MESSAGE	0Eh			; "Your foes see through your illusion!"
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 loc_6F66:
 		call	process_poison
@@ -462,11 +462,11 @@ loc_6F66:
 		pop	af
 		jp	c, oh_dear_game_over
 
-		RST_10_5D
+		CHECK_THREE_HEROES
 
 		jr	nc, loc_6FB4
 
-		RST_10_2F
+		FIND_ALIVE_HERO
 
 		jr	c, loc_6FB4
 
@@ -633,7 +633,7 @@ loc_7033:
 		call	loc_7068
 		ld	a, (GAME_VARIABLES + VAR_TARGET_ID)
 
-		RST_10_53
+		PRINT_ACTOR_NAME
 
 		call	loc_7BF4
 		jr	nc, loc_7048
@@ -663,11 +663,11 @@ loc_7058:
 loc_705B:
 		PRINT_STATS_TABLE
 
-		RST_10_2E
+		CHECK_ALL_HEROES
 
 		jp	c, oh_dear_game_over
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 loc_7064:
 		pop	bc
@@ -716,7 +716,7 @@ loc_708A:
 		or	a
 		ret	z
 
-		RST_10_51
+		PICK_RANDOM_HERO
 
 		ld	(GAME_VARIABLES + VAR_TARGET_ID), a
 

@@ -35,7 +35,7 @@ day_change_night:
 		ld	(GAME_VARIABLES + VAR_COPY_DAYPART), a
 
 loc_60D2:
-		RST_10_00	1Fh
+		GET_ATTR_SAVE_IX	1Fh
 
 		jr	z, loc_60E7
 
@@ -52,7 +52,7 @@ loc_60D2:
 		ld	(GAME_VARIABLES + VAR_REVEAL_SECRET), a
 
 loc_60E7:
-		RST_10_00	20h
+		GET_ATTR_SAVE_IX	20h
 
 		jr	z, loc_60F5
 
@@ -65,14 +65,14 @@ loc_60E7:
 		SHOW_ICON	0Ah
 
 loc_60F5:
-		RST_10_00	28h
+		GET_ATTR_SAVE_IX	28h
 
 		jr	z, loc_60FB
 
 		dec	(hl)
 
 loc_60FB:
-		RST_10_00	21h
+		GET_ATTR_SAVE_IX	21h
 
 		jr	z, loc_6109
 
@@ -85,7 +85,7 @@ loc_60FB:
 		SHOW_ICON	0Dh
 
 loc_6109:
-		RST_10_00	22h
+		GET_ATTR_SAVE_IX	22h
 
 		jr	z, loc_6117
 
@@ -98,7 +98,7 @@ loc_6109:
 		SHOW_ICON	0Bh
 
 loc_6117:
-		RST_10_00	23h
+		GET_ATTR_SAVE_IX	23h
 
 		jr	z, loc_6125
 

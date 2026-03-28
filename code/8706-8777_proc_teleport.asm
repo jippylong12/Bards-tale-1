@@ -28,17 +28,17 @@ wait_teleport:
 		ld	(iy+VAR_CURSOR_ROW), 7
 		ld	a, (GAME_VARIABLES + VAR_COORD_SO_NO)
 
-		RST_10_45
+		ADJUST_VALUE
 
 		ld	c, a
 		ld	a, (GAME_VARIABLES + VAR_COORD_WE_EA)
 
-		RST_10_45
+		ADJUST_VALUE
 
 		ld	b, a
 		ld	a, (GAME_VARIABLES + VAR_TELEPORT_MODE)
 
-		RST_10_45
+		ADJUST_VALUE
 
 		ld	d, a
 

@@ -5,7 +5,7 @@ loc_6A66:
 
 		ld	(iy+VAR_TARGET_ID), 1
 
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		ret	c
 
@@ -15,7 +15,7 @@ loc_6A66:
 
 		inc	(iy+VAR_TARGET_ID)
 
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		ret	c
 
@@ -25,7 +25,7 @@ loc_6A7E:
 		ret
 ; -------------------------------------
 
-dyn_proc_55:							; RST_10_2A
+dyn_proc_55:							; CHECK_FLEE_RESULT
 		GET_RND_NUMBERS
 
 		PUSH_REGS

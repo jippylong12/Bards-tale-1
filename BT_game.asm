@@ -119,7 +119,7 @@ sub_6CB1:
 
 ; -------------------------------------
 
-dyn_proc_95:				; RST_10_5D
+dyn_proc_95:				; CHECK_THREE_HEROES
 		ld	b, 3
 
 loc_6D2E:
@@ -199,7 +199,7 @@ sub_7406:
 ; -------------------------------------
 
 if_FB98_is_zero:
-		ld	a, (___table_85)
+		ld	a, (COMBAT_ACTIVE_FLAG)
 		or	a
 
 		ret
@@ -277,7 +277,7 @@ sub_7785:
 
 ; -------------------------------------
 
-dyn_proc_54:						; RST_10_29
+dyn_proc_54:						; CHANGE_COMBAT_SPEED
 		PUSH_REGS
 
 		ld	e, 1
@@ -390,7 +390,7 @@ shield_setup:
 
 		SHOW_ICON	ICON_SHIELD
 
-		RST_10_4A
+		RECALC_ALL_AC
 
 		jr	jp_print_ellipsis
 
@@ -442,7 +442,7 @@ loc_886D:
 
 ; -------------------------------------
 
-dyn_proc_80:				; RST_10_49
+dyn_proc_80:				; RESET_DAMAGE
 		xor	a
 		ld	h, a
 		ld	l, a
@@ -562,7 +562,7 @@ loc_C04F:
 		push	af
 		ex	af, af'
 		ld	bc, 12h
-		ld	hl, ___table_45 + 12h -1		; 984Ah
+		ld	hl, KEY_CODES_TABLE + 12h -1		; 984Ah
 		cpdr
 		jr	nz, loc_C060	; NZ = not found
 
@@ -713,7 +713,7 @@ SOME_BUFF:
 LEVEL_STOP:				; first address after the level data
 		db 1Fh, 1Fh, 1Fh,	3Fh, 7Fh,0FFh,0FFh,   0,   0,	0,   0
 
-___table_82:
+GUARDIAN_TYPE:
 		db    0
 
 byte_FB5D:
@@ -734,16 +734,16 @@ byte_FB63:
 		db  1Ah, 1Ah,  0, 1Ah, 0,  0,  0, 0FFh
 		db	0FFh,    0,    0,     0,     0,  55h, 0FFh,  55h
 
-___table_83:
+DISPLAY_PALETTE:
 		db	55h,  0FFh,  55h,  55h,     0, 0F4h, 0F4h, 0FCh
 		db  0FCh, 0FDh, 0FFh, 0FFh, 0FFh,  73h,   73h,  73h
 		db  30h,     0,   43h, 0FFh, 0FFh, 0F1h, 0D0h,  4Fh
 		db  4Fh, 0C4h, 0D1h, 0FFh, 0FFh
 
-___table_84:	
+ACTIVE_GUARDIAN:	
 		db 50h, 50h, 50h, 0, 0, 0, 0, 0
 
-___table_85:
+COMBAT_ACTIVE_FLAG:
 		db 0Ah
 
 byte_FB99:
@@ -756,25 +756,25 @@ sentence:
 		db 0A0h, 70h, 58h, 58h,	58h, 70h,0A0h,	 0,   0,0AAh, 50h,0FAh,	50h,0AAh,   0,	 0
 		db 0, 50h, 50h, 0FAh
 
-___table_86:
+SPELL_LIGHT_STATE:
 		db 50h, 50h, 0, 0, 0
 
-___table_87:
+SPELL_REVEAL_STATE:
 		db 0, 0, 0, 0, 50h
 
-___table_88:
+SPELL_SECRET_STATE:
 		db 50h, 30h, 0, 0, 0
 
-___table_89:
+SPELL_COMPASS_STATE:
 		db 0FAh, 0FAh, 0, 0, 0
 		
-___table_90:
+SPELL_CARPET_STATE:
 		db 0, 0, 0, 0, 0
 
-___table_91:
+SPELL_SHIELD_STATE:
 		db 50h, 50h, 0, 0, 0
 
-___table_92:
+SPELL_EYE_STATE:
 		db 0FFh, 0FFh, 3, 3, 3
 
 byte_FBD7:	db 3

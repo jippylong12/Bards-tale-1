@@ -17,7 +17,7 @@ cast_spell:
 
 		pop	af
 
-		RST_10_30
+		SELECT_TARGET
 
 		ret	c
 

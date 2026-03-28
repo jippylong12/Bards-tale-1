@@ -1,4 +1,4 @@
-dyn_proc_89:				; RST_10_53
+dyn_proc_89:				; PRINT_ACTOR_NAME
 		PUSH_REGS
 
 		GET_GAME_VARIABLE	VAR_TARGET_ID		; ???

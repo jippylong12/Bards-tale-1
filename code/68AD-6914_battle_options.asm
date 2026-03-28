@@ -13,7 +13,7 @@ battle_options:						; loc_68AD
 
 		jr	z, option_party_attack
 
-		ld	a, (___table_84)
+		ld	a, (ACTIVE_GUARDIAN)
 		or	a
 		jr	z, option_party_attack
 

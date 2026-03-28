@@ -7,7 +7,7 @@ loc_8607:
 		or	a
 		jr	nz, loc_8618
 
-		ld	(___table_88), a
+		ld	(SPELL_SECRET_STATE), a
 		inc	(iy+VAR_REVEAL_FLAG)
 
 loc_8618:

@@ -52,7 +52,7 @@ loc_844B:
 		add	a, (hl)
 		ld	(hl), a
 
-		RST_10_4A
+		RECALC_ALL_AC
 
 loc_8453:
 		jp	print_ellipsis
@@ -85,7 +85,7 @@ loc_8464:
 		add	a, (hl)
 		ld	(hl), a
 
-		RST_10_4A
+		RECALC_ALL_AC
 
 		jr	loc_8453
 ; -------------------------------------

@@ -95,7 +95,7 @@ loc_7D37:
 		cp	(iy+VAR_CURRENT_ACTOR)
 		call	z, sub_7A67
 
-		RST_10_2E
+		CHECK_ALL_HEROES
 
 		jp	c, oh_dear_game_over
 

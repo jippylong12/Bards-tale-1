@@ -5,7 +5,7 @@ fight_or_run:
 
 		jr	nz, party_fight
 
-		RST_10_2F
+		FIND_ALIVE_HERO
 
 		jr	c, party_fight
 

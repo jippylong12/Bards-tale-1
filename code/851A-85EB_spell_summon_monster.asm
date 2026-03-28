@@ -32,7 +32,7 @@ loc_852B:
 
 		push	af
 
-		RST_10_5C
+		CALC_MONSTER_HP
 
 		ld	(ENEMY+ENEMY_HITS), a
 		ld	(ENEMY+ENEMY_COND), a
@@ -135,7 +135,7 @@ loc_85A8:
 loc_85AB:
 		ld	e, b
 
-		RST_10_5D
+		CHECK_THREE_HEROES
 
 		jr	c, loc_85A8
 
@@ -183,11 +183,11 @@ loc_85D9:
 
 		CALC_IN_FB7D
 
-		RST_10_5C
+		CALC_MONSTER_HP
 
 		ld	(hl), a
 
-		RST_10_57
+		CALC_SPELL_FX
 
 		ld	(hl), 0
 		ret

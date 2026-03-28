@@ -1,5 +1,5 @@
 loc_7828:
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		jr	c, loc_7832
 

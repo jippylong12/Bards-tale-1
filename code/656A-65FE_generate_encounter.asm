@@ -83,7 +83,7 @@ loc_65AF:
 loc_65C0:
 		GET_B_FROM_LIST	41h
 
-		RST_10_61	71h, 7
+		CHECK_ITEM_MASK	71h, 7
 
 		jr	z, loc_65CC
 
@@ -113,7 +113,7 @@ loc_65DD:
 loc_65E1:
 		GET_B_FROM_TABLE	41h
 
-		RST_10_5C
+		CALC_MONSTER_HP
 
 		ld	(hl), a
 		inc	hl

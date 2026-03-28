@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.3.0] - 2026-03-28
+
+### Named (31 tables + macros)
+- 13 data tables: `___table_82`→`GUARDIAN_TYPE`, tables 86-92 are spell state trackers (LIGHT, REVEAL, SECRET, COMPASS, CARPET, SHIELD, EYE), `___table_85`→`COMBAT_ACTIVE_FLAG`, `___table_45`→`KEY_CODES_TABLE`
+- 18 RST_10 macros: `RST_10_2A`→`CHECK_FLEE_RESULT`, `RST_10_30`→`SELECT_TARGET`, `RST_10_48`→`ROLL_DAMAGE`, `RST_10_4A`→`RECALC_ALL_AC`, `RST_10_61`→`CHECK_ITEM_MASK`, etc.
+
+### Verified
+- Binary still matches original
+
 ## [1.2.0] - 2026-03-28
 
 ### Named (12 struct offsets)

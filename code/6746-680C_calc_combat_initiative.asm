@@ -136,7 +136,7 @@ loc_67C6:
 		ld	a, 0FFh
 
 loc_67DC:
-		ld	(___table_95+51h), a
+		ld	(ALLY_DATA+51h), a
 
 loc_67DF:
 		ld	b, 0
@@ -146,13 +146,13 @@ loc_67E1:
 
 		jr	z, loc_6802
 
-		RST_10_61	70h, 1Fh
+		CHECK_ITEM_MASK	70h, 1Fh
 
 		add	a, a
 		add	a, a
 		ld	c, a
 
-		RST_10_57
+		CALC_SPELL_FX
 
 		GET_B_FROM_TABLE	36h
 

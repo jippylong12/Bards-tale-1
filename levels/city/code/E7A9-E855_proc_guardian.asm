@@ -5,7 +5,7 @@ proc_guardian:
 
 		GET_E_FROM_TABLE	INX_GUARDIANS
 
-		ld      (___table_84), a
+		ld      (ACTIVE_GUARDIAN), a
 
 		GET_E_FROM_TABLE	10h
 
@@ -34,7 +34,7 @@ attack_guardian:
 		ld	(GAME_VARIABLES + VAR_ENEMY_COUNT), a
 		ld	(GAME_VARIABLES + VAR_AMBUSH_FLAG), a
 		inc	a
-		ld	(___table_85), a
+		ld	(COMBAT_ACTIVE_FLAG), a
 		inc	(iy+VAR_ENCOUNTER_CTR)
 		call	combat_foes
 

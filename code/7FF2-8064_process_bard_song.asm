@@ -53,7 +53,7 @@ loc_802F:
 		ld	hl, GAME_VARIABLES + VAR_SONG_MODIFIER
 		call	sub_805D
 
-		RST_10_4A
+		RECALC_ALL_AC
 
 		and	a
 

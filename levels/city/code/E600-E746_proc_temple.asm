@@ -242,7 +242,7 @@ loc_E701:
 ; -------------------------------------
 
 loc_E705:
-		RST_10_00	37h
+		GET_ATTR_SAVE_IX	37h
 
 		jr	z, loc_E72D
 
@@ -290,7 +290,7 @@ loc_E738:
 
 		PRINT_MESSAGE2	60h			; "...and he is healed!"
 
-		RST_10_4A
+		RECALC_ALL_AC
 
 		CHANGE_SPEED_TO_8
 

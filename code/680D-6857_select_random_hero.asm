@@ -1,4 +1,4 @@
-dyn_proc_87:				; RST_10_51
+dyn_proc_87:				; PICK_RANDOM_HERO
 		PUSH_REGS
 
 		ld	c, 7

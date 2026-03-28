@@ -68,7 +68,7 @@ loc_835C:
 		cp	2
 		jr	nc, loc_836F
 
-		RST_10_53
+		PRINT_ACTOR_NAME
 
 		PRINT_MESSAGE	86h			; "..."
 
@@ -92,9 +92,9 @@ loc_8383:
 		call	loc_891E
 		ld	b, a
 
-		RST_10_49
+		RESET_DAMAGE
 
-		RST_10_48
+		ROLL_DAMAGE
 
 		GET_GAME_VARIABLE	VAR_ACTIVE_HERO		; ???
 
@@ -124,10 +124,10 @@ loc_8398:
 ; -------------------------------------
 
 loc_83A8:
-		RST_10_53
+		PRINT_ACTOR_NAME
 
 loc_83AA:
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		jr	c, loc_83C6
 
@@ -146,7 +146,7 @@ loc_83B6:
 
 		PRINT_NEWLINE
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 		jr	loc_83E5
 ; -------------------------------------
@@ -184,7 +184,7 @@ loc_83DC:
 		PRINT_MESSAGE	62h			; "him!"
 
 loc_83E3:
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 loc_83E5:
 		dec	e

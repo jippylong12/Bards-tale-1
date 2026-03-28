@@ -6,12 +6,12 @@ loc_81D5:
 		ld	d, (ix+CHAR_LEVEL_HI)
 		ld	e, (ix+CHAR_LEVEL_LO)
 
-		RST_10_49
+		RESET_DAMAGE
 
 loc_81E4:
 		push	bc
 
-		RST_10_48
+		ROLL_DAMAGE
 
 		pop	bc
 		dec	de
@@ -41,9 +41,9 @@ loc_81FF:
 ; -------------------------------------
 
 loc_8207:
-		RST_10_49
+		RESET_DAMAGE
 
-		RST_10_48
+		ROLL_DAMAGE
 
 loc_820B:
 		ld	a, (GAME_VARIABLES + VAR_DAMAGE_TYPE)
@@ -105,9 +105,9 @@ loc_823E:
 loc_824A:
 		PRINT_MESSAGE	65h			; "at"
 
-		RST_10_53
+		PRINT_ACTOR_NAME
 
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		jr	c, loc_826E
 

@@ -26,7 +26,7 @@ use_item:
 
 		ld	(GAME_VARIABLES + VAR_CURRENT_SPELL), a
 
-		RST_10_61	69h, 7
+		CHECK_ITEM_MASK	69h, 7
 
 		cp	4
 		jr	nc, loc_74FA
@@ -41,7 +41,7 @@ use_item:
 
 		pop	af
 
-		RST_10_30
+		SELECT_TARGET
 
 		ret	c
 

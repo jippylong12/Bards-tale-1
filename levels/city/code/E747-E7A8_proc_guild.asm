@@ -60,7 +60,7 @@ exit_guild:
 
 		jr	c, loop_menu
 
-		RST_10_2E
+		CHECK_ALL_HEROES
 
 		xor	a
 		or	b

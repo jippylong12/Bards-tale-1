@@ -1,5 +1,5 @@
 enemies_killed:
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 		xor	a
 		ld	(GAME_VARIABLES + VAR_TREASURE_FLAG), a
@@ -205,7 +205,7 @@ loc_7F2D:
 		ld	d, 0F0h
 
 loc_7F39:
-		RST_10_51
+		PICK_RANDOM_HERO
 
 		or	a
 		jr	z, loc_7F39

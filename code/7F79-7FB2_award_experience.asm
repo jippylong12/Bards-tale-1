@@ -1,7 +1,7 @@
 loc_7F79:
 		push	af
 
-		RST_10_2E
+		CHECK_ALL_HEROES
 
 		ld	c, b
 		ld	de, 0

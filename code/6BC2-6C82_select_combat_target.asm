@@ -1,4 +1,4 @@
-dyn_proc_61:						; RST_10_30
+dyn_proc_61:						; SELECT_TARGET
 		PUSH_REGS
 
 		ld	b, a
@@ -52,7 +52,7 @@ loc_6BFA:
 
 		call	print_s_bracket
 
-		RST_10_5D
+		CHECK_THREE_HEROES
 
 		jr	c, loc_6C21
 
@@ -88,7 +88,7 @@ loc_6C21:
 loc_6C26:
 		call	sub_6CB1
 
-		RST_10_5D
+		CHECK_THREE_HEROES
 
 		jr	c, loc_6C31
 

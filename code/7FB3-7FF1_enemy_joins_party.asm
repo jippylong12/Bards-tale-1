@@ -6,7 +6,7 @@ loc_7FB3:
 		pop	hl
 
 loc_7FBA:
-		RST_10_51
+		PICK_RANDOM_HERO
 
 		or	a
 		jr	z, loc_7FBA
@@ -49,7 +49,7 @@ loc_7FDB:
 
 		PRINT_STATS_TABLE
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 		and	a
 

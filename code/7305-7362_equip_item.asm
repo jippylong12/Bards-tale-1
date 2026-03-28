@@ -29,7 +29,7 @@ loc_731F:
 		or	a
 		ret	z
 
-		RST_10_61	6Bh, 0Fh
+		CHECK_ITEM_MASK	6Bh, 0Fh
 
 		ret	z
 
@@ -58,7 +58,7 @@ equip_for_use:
 loc_733F:
 		ld	a, (hl)
 
-		RST_10_61	6Bh, 0Fh
+		CHECK_ITEM_MASK	6Bh, 0Fh
 
 		cp	c
 		jr	nz, loc_734C

@@ -1,7 +1,7 @@
 loc_8497:
 		PUSH_REGS
 
-		RST_10_49
+		RESET_DAMAGE
 
 		GET_IY_A_FROM_TABLE	4Bh, 4Ah
 

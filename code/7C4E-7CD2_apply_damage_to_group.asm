@@ -20,7 +20,7 @@ loc_7C5A:
 
 		ex	de, hl
 
-		RST_10_57
+		CALC_SPELL_FX
 
 		GET_B_FROM_TABLE	36h
 
@@ -40,7 +40,7 @@ loc_7C6C:
 
 		ex	de, hl
 
-		RST_10_57
+		CALC_SPELL_FX
 
 		ld	b, a
 

@@ -182,11 +182,11 @@ not hex offsets. Each patch version is independently verifiable.
 - [x] Named 5 ENEMY offsets: ACTIVE_FLAG, COMBAT_DATA, SPEED, ATTACK_SPEC, SPECIAL_FLAG
 - [x] Verified binary matches
 
-### v1.3.0 — Name Data Tables & Macros (31 unnamed)
+### v1.3.0 — Name Data Tables & Macros (31 unnamed) (DONE)
 
-- [ ] Name 13 `___table_xx` data tables in BT_game.asm
-- [ ] Name 18 unnamed `RST_10_xx` macros in macroses.asm
-- [ ] Verify binary matches
+- [x] Named 13 `___table_xx` → spell state trackers, combat flags, key codes
+- [x] Named 18 `RST_10_xx` macros → meaningful dispatch names (CHECK_FLEE_RESULT, SELECT_TARGET, etc.)
+- [x] Verified binary matches
 
 ### v1.4.0 — Architecture Documentation
 

@@ -31,7 +31,7 @@ loc_7920:
 
 		PRINT_MESSAGE	29h			; "The party disbelieves..."
 
-		RST_10_29
+		CHANGE_COMBAT_SPEED
 
 loc_7932:
 		dec	e
@@ -51,7 +51,7 @@ loc_7940:
 		ld	(iy+VAR_ACTIVE_HERO), 80h
 		ld	(iy+VAR_TARGET_ID), 1
 
-		RST_10_2A
+		CHECK_FLEE_RESULT
 
 		ret	c
 		or	a
