@@ -1,0 +1,190 @@
+# Bard's Tale ZX Spectrum - Reverse Engineering Roadmap
+
+## Project Overview
+
+Partial reverse engineering of **The Bard's Tale** (1988 ZX Spectrum port).
+Z80 assembly, compiled with SjASMPlus. Original work done 2020-2022.
+
+## Current State (v0.1.0)
+
+The codebase contains a disassembly of the full game binary (`$5B00-$FFFF`) with the
+original memory dumps in `original/` for byte-level verification.
+
+### What exists
+
+- **107 identified code files** — routines with meaningful names (e.g. `fight_or_run`,
+  `process_spell`, `create_char`, `movement`)
+- **61 unidentified core code files** — labeled `___UNKNOWN`
+- **24 unidentified city/level code files** — in `levels/city/`
+- **Full macro library** — 60+ macros wrapping the RST 10h dispatch system
+- **Constants defined** — character classes, races, statuses, time-of-day, directions,
+  icons, screen addresses, character struct offsets, enemy struct offsets
+- **Data tables** — monsters, spells, items, spell costs, light durations, summon
+  creatures, city map, icons, font data
+- **Compile script** (Windows `.bat`) with binary diff verification against original
+- **Original binary dumps** for verification
+
+### What works
+
+- The assembly is structurally complete — all addresses from `$5B00` to `$FFFF` are
+  accounted for in the include chain
+- Binary diff verification exists to confirm recompiled output matches original
+- Compilation has not been verified on macOS yet
+
+### What doesn't work / is missing
+
+- No macOS/Linux build script (only `_compile_bt.bat` for Windows)
+- 85 routines across core + city code remain unidentified
+- Many game variables (`VAR_00` through `VAR_76`) are unnamed
+- Many character/enemy struct offsets are unnamed (`CHAR_12`, `ENEMY_10`, etc.)
+- Several data tables are unnamed (`___table_83` through `___table_95`)
+- No dungeon levels included (only `levels/city/`)
+- No documentation of the RST 10h dispatch system
+- No cross-reference map of which routines call which
+
+---
+
+## Milestones
+
+### v0.2.0 — Build & Run on macOS
+
+- [ ] Create cross-platform build script (Makefile or shell script)
+- [ ] Verify SjASMPlus compiles cleanly on macOS/ARM
+- [ ] Create `recompile/` output directory if missing
+- [ ] Verify binary diff against original dumps passes
+- [ ] Document emulator setup (Fuse/ZEsarUX) for running the output
+- [ ] Add `.gitignore` for build artifacts
+
+### v0.3.0 — Reverse Engineer Combat System (19 files)
+
+The combat routines are clustered together and reference each other heavily,
+making them a natural batch.
+
+- [ ] `6746-680C` — calculate combat initiative
+- [ ] `680D-6857` — combat setup/pre-battle
+- [ ] `6977-69B7` — handle battle actions (attack/hide)
+- [ ] `6A03-6A26` — combat action processing
+- [ ] `6A27-6A48` — combat action processing (continued)
+- [ ] `6A66-6AC5` — combat damage calculation
+- [ ] `6ACC-6B23` — combat results/aftermath
+- [ ] `6BC2-6C82` — combat spell effects
+- [ ] `6D05-6D2B` — find equipped special weapon
+- [ ] `7144-719A` — monster magic/spell casting
+- [ ] `719B-71AF` — combat status effects
+- [ ] `7906-794C` — post-combat processing
+- [ ] `794D-7966` — post-combat rewards
+- [ ] `7967-7A31` — experience/level processing
+- [ ] `7A67-7A9D` — combat cleanup
+- [ ] `7A9E-7AB7` — combat cleanup (continued)
+- [ ] `7F79-7FB2` — combat flow control
+- [ ] `7FB3-7FF1` — combat flow control (continued)
+- [ ] `7FF2-8064` — combat flow control (continued)
+
+### v0.4.0 — Reverse Engineer Encounter Generation (5 files)
+
+- [ ] `656A-65FE` — generate random encounter
+- [ ] `669A-6705` — process enemy advance
+- [ ] `5C17-5C50` — convert stats to ranks/thresholds
+- [ ] `64CA-64DB` — check item effect flags
+- [ ] `73A6-73E7` — action dispatch table handler
+
+### v0.5.0 — Reverse Engineer Character/Party System (14 files)
+
+- [ ] `7590-75A4` — character stat operation
+- [ ] `75A5-75BE` — character stat operation
+- [ ] `75BF-7624` — character stat operation
+- [ ] `7625-7638` — character stat operation
+- [ ] `7639-7663` — character stat operation
+- [ ] `76B9-76EC` — gold/economy operation
+- [ ] `771C-773B` — gold/economy operation
+- [ ] `7766-7779` — roster management
+- [ ] `77B0-77D7` — attribute packing/unpacking
+- [ ] `7828-78A7` — character status processing
+- [ ] `78A8-78CB` — character status processing
+- [ ] `78CC-78D9` — character status processing
+- [ ] `7DB8-7DF8` — character data operation
+- [ ] `7DF9-7E37` — character data operation
+
+### v0.6.0 — Reverse Engineer Magic System (8 files)
+
+- [ ] `7AB8-7BEC` — spell effect processing (large, ~300 bytes)
+- [ ] `7BF4-7C4D` — spell effect processing
+- [ ] `7C4E-7CD2` — spell effect processing
+- [ ] `7CD3-7DB3` — spell effect processing (large, ~224 bytes)
+- [ ] `819B-81D4` — spell/light system
+- [ ] `81D5-82BD` — spell/light system (large, ~232 bytes)
+- [ ] `82BE-82D1` — spell helper
+- [ ] `82D7-82FB` — spell helper
+
+### v0.7.0 — Reverse Engineer Dungeon/Navigation System (8 files)
+
+- [ ] `8314-8412` — dungeon processing (large, ~254 bytes)
+- [ ] `8413-8496` — dungeon processing
+- [ ] `8497-8517` — dungeon processing
+- [ ] `851A-85EB` — dungeon processing (large, ~209 bytes)
+- [ ] `85EC-8606` — dungeon processing
+- [ ] `8607-861A` — dungeon processing
+- [ ] `861B-8625` — dungeon processing
+- [ ] `8626-8648` — dungeon processing
+
+### v0.8.0 — Reverse Engineer Remaining Core + Print/Display (7 files)
+
+- [ ] `8649-86A9` — misc game logic
+- [ ] `86AA-86C4` — misc game logic
+- [ ] `8778-87B4` — display/UI helper
+- [ ] `8889-8895` — display/UI helper
+- [ ] `88E5-890C` — print/display routine
+- [ ] `890D-891C` — print/display routine
+- [ ] `C00A-C038` — print routine variant
+
+### v0.9.0 — Reverse Engineer City/Level Code (24 files)
+
+- [ ] `C18C-C19D` — city level init
+- [ ] `E4F4-E50C` — shoppe helper
+- [ ] `E50D-E54B` — shoppe helper
+- [ ] `E54C-E561` — shoppe helper
+- [ ] `E5F3-E5FF` — temple/price helper
+- [ ] `E8A8-E8BB` — city location helper
+- [ ] `E8BC-E8CB` — city location helper
+- [ ] `EBAB-EBB3` — review board helper
+- [ ] `EBB4-EBC2` — review board helper
+- [ ] `EF70-EFD1` — city navigation
+- [ ] `EFD2-F13E` — city navigation (large)
+- [ ] `F13F-F178` — city navigation
+- [ ] `F1A9-F258` — city processing
+- [ ] `F259-F28E` — city processing
+- Plus remaining unnamed data tables and variables
+
+### v1.0.0 — Full Documentation & Variable Naming
+
+- [ ] Name all `VAR_xx` game variables
+- [ ] Name all `CHAR_xx` and `ENEMY_xx` struct offsets
+- [ ] Name all `___table_xx` data tables
+- [ ] Document RST 10h dispatch system architecture
+- [ ] Create cross-reference map (caller/callee graph)
+- [ ] Write architecture overview document
+- [ ] Verify final binary still matches original
+
+---
+
+## File Inventory
+
+| Category | Identified | Unknown | Total |
+|----------|-----------|---------|-------|
+| Core code | 46 | 61 | 107 |
+| City/level code | 26 | 14 | 40 |
+| Data files | — | — | 24 |
+| Tables | — | — | 12 |
+| Graphics | — | — | 2 |
+| **Total** | **72** | **75** | **185** |
+
+## Notes
+
+- The original reverse engineer used an interceptor/debugger hack (`hack_interceptor.asm`,
+  `hack_tools.asm`) with conditional compilation (`DEFINE INTERCEPT`) — useful for
+  runtime analysis
+- Cheat defines exist: `KILLERS`, `MAXEXPIRIENCE`, `MAXGOLD`, `MAXLEVEL`, etc.
+- Only the city level is included; dungeon levels load at `$C18C` and would replace
+  the city data at runtime
+- The compile script diffs recompiled binary against original to verify correctness —
+  this is the ultimate validation that reverse engineering is accurate
