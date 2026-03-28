@@ -58,7 +58,7 @@ loc_820B:
 		jr	c, loc_821E
 
 		ld	a, 1
-		ld	(ENEMY+ENEMY_10), a
+		ld	(ENEMY+ENEMY_ACTIVE_FLAG), a
 
 loc_821E:
 		GET_GAME_VARIABLE	VAR_TARGET_ID		; ???

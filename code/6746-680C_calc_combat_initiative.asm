@@ -122,7 +122,7 @@ loc_67C6:
 		or	a
 		jr	z, loc_67DF
 
-		ld	a, (ENEMY+ENEMY_15)
+		ld	a, (ENEMY+ENEMY_SPEED)
 		and	1Fh
 		add	a, a
 		add	a, a

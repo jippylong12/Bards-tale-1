@@ -1,7 +1,7 @@
 loc_819B:
 		GET_GAME_VARIABLE	VAR_TARGET_ID			; ???
 
-		ld	a, (ENEMY+ENEMY_16)
+		ld	a, (ENEMY+ENEMY_ATTACK_SPEC)
 		jr	c, loc_81A7
 
 		jr	z, loc_81AC

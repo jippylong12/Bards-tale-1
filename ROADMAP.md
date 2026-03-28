@@ -176,11 +176,11 @@ not hex offsets. Each patch version is independently verifiable.
 - [x] Updated all references across 100+ assembly files
 - [x] Verified binary matches after all renames
 
-### v1.2.0 — Name Character & Enemy Struct Offsets (12 unnamed)
+### v1.2.0 — Name Character & Enemy Struct Offsets (12 unnamed) (DONE)
 
-- [ ] Name 7 unnamed `CHAR_xx` offsets (CHAR_12, CHAR_13, CHAR_15, etc.)
-- [ ] Name 5 unnamed `ENEMY_xx` offsets (ENEMY_10, ENEMY_11, ENEMY_15, etc.)
-- [ ] Verify binary matches
+- [x] Named 7 CHAR offsets: SPEED, SAVED_STATS, ATTACK_SPEC, DEFENSE_SPEC, SPECIAL_FLAG, BACKUP_PARAMS, SWAP_STATS
+- [x] Named 5 ENEMY offsets: ACTIVE_FLAG, COMBAT_DATA, SPEED, ATTACK_SPEC, SPECIAL_FLAG
+- [x] Verified binary matches
 
 ### v1.3.0 — Name Data Tables & Macros (31 unnamed)
 

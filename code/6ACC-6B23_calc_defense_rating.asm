@@ -2,7 +2,7 @@ loc_6ACC:
 		or	a
 		jr	nz, loc_6ADA
 
-		ld	a, (ENEMY+ENEMY_16)
+		ld	a, (ENEMY+ENEMY_ATTACK_SPEC)
 		call	divide_A_by_8
 		add	a, (iy+VAR_DEFENSE_BONUS)
 
@@ -65,7 +65,7 @@ loc_6B14:
 		add	a, d
 		ld	d, a
 
-		GET_ATTR_BY_PARAM_SAVE_HL	CHAR_12		; ???
+		GET_ATTR_BY_PARAM_SAVE_HL	CHAR_SPEED		; ???
 
 		and	7
 		add	a, d

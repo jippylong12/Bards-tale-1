@@ -71,7 +71,7 @@ loc_6D8B:
 		or	a
 		jr	nz, loc_6DD5
 
-		GET_ATTR_BY_PARAM_SAVE_HL	CHAR_17		; ???
+		GET_ATTR_BY_PARAM_SAVE_HL	CHAR_SPECIAL_FLAG		; ???
 
 		jr	z, loc_6DAE
 
@@ -230,11 +230,11 @@ loc_6E5A:
 		ld	(GAME_VARIABLES + VAR_TARGET_ID), a
 		or	a
 		jr	nz, loc_6E6B
-		ld	a, (ENEMY+ENEMY_17)
+		ld	a, (ENEMY+ENEMY_SPECIAL_FLAG)
 		or	a
 		jr	nz, loc_6E6B
 		ld	a, 1
-		ld	(ENEMY+ENEMY_10), a
+		ld	(ENEMY+ENEMY_ACTIVE_FLAG), a
 
 loc_6E6B:
 		GET_GAME_VARIABLE	VAR_TARGET_ID			; ???
@@ -276,7 +276,7 @@ loc_6E8E:
 		or	a
 		jr	nz, test_chop
 
-		ld	a, (ENEMY+ENEMY_16)
+		ld	a, (ENEMY+ENEMY_ATTACK_SPEC)
 		call	loc_7068
 
 		jr	test_is_missed
@@ -431,7 +431,7 @@ loc_6F30:
 		or	a
 		jr	z, loc_6F66
 
-		ld	a, (ENEMY+ENEMY_17)
+		ld	a, (ENEMY+ENEMY_SPECIAL_FLAG)
 		or	a
 		jr	z, loc_6F66
 
@@ -498,7 +498,7 @@ loc_6F93:
 		xor	a
 		ld	(GAME_VARIABLES + VAR_AMBUSH_FLAG), a
 		ld	(GAME_VARIABLES + VAR_ENCOUNTER_CTR), a
-		ld	a, (ENEMY+ENEMY_16)
+		ld	a, (ENEMY+ENEMY_ATTACK_SPEC)
 		or	a
 		jr	nz, loc_6FA6
 
@@ -712,7 +712,7 @@ loc_7068:
 
 loc_708A:
 		ld	(iy+VAR_TARGET_ID), 80h
-		ld	a, (ENEMY+ENEMY_10)
+		ld	a, (ENEMY+ENEMY_ACTIVE_FLAG)
 		or	a
 		ret	z
 

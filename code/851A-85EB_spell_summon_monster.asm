@@ -108,7 +108,7 @@ loc_858C:
 		ld	a, 1
 
 loc_8592:
-		ld	(ENEMY+ENEMY_17), a
+		ld	(ENEMY+ENEMY_SPECIAL_FLAG), a
 		ld	b, 6
 
 loc_8597:

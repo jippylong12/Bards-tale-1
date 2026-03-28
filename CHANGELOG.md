@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.2.0] - 2026-03-28
+
+### Named (12 struct offsets)
+- 7 character offsets: `CHAR_12`→`CHAR_SPEED` (used in defense/initiative), `CHAR_13`→`CHAR_SAVED_STATS` (possession swap), `CHAR_15`→`CHAR_ATTACK_SPEC` (damage dice), `CHAR_16`→`CHAR_DEFENSE_SPEC`, `CHAR_17`→`CHAR_SPECIAL_FLAG`, `CHAR_60`→`CHAR_BACKUP_PARAMS` (class change), `CHAR_63`→`CHAR_SWAP_STATS`
+- 5 enemy offsets: `ENEMY_10`→`ENEMY_ACTIVE_FLAG`, `ENEMY_11`→`ENEMY_COMBAT_DATA`, `ENEMY_15`→`ENEMY_SPEED`, `ENEMY_16`→`ENEMY_ATTACK_SPEC`, `ENEMY_17`→`ENEMY_SPECIAL_FLAG`
+
+### Verified
+- Binary still matches original
+
 ## [1.1.0] - 2026-03-28
 
 ### Named (70 game variables)

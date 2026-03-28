@@ -88,7 +88,7 @@ loc_7617:
 ; -------------------------------------
 
 loc_761B:
-		ld	a, (ix+CHAR_16)
+		ld	a, (ix+CHAR_DEFENSE_SPEC)
 
 		RST_10_61	44h, 1Fh
 

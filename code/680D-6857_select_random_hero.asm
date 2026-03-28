@@ -29,11 +29,11 @@ loc_6821:
 		or	a
 		jr	nz, loc_683A
 
-		ld	a, (ENEMY+ENEMY_10)
+		ld	a, (ENEMY+ENEMY_ACTIVE_FLAG)
 		or	a
 		jr	nz, loc_6843
 
-		ld	a, (ENEMY+ENEMY_17)
+		ld	a, (ENEMY+ENEMY_SPECIAL_FLAG)
 		or	a
 		jr	z, loc_683A
 

@@ -71,7 +71,7 @@ loc_7864:
 		add	hl, hl
 		ld	b, h
 		ld	c, l
-		ld	hl, ENEMY + ENEMY_11
+		ld	hl, ENEMY + ENEMY_COMBAT_DATA
 		ld	e, 4
 
 loc_787B:

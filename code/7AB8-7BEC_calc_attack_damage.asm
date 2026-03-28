@@ -129,7 +129,7 @@ loc_7B35:
 		GET_GAME_VARIABLE	VAR_ATTACK_MODIFIER			; ???
 
 		jr	nz, loc_7B60
-		ld	a, (ix+CHAR_15)
+		ld	a, (ix+CHAR_ATTACK_SPEC)
 		ld	b, a
 		rlca
 		rlca
