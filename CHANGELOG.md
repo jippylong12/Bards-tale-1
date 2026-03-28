@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.6.0] - 2026-03-28
+
+### Identified (8 routines — magic/damage system)
+- `calc_attack_damage` — full melee damage pipeline: weapon damage dice, AC reduction, attacks per round, Monk unarmed scaling (half level, capped at 31), Hunter critical hit (random vs CHAR_HUNTER_CHANCE)
+- `calc_enemy_attack` — enemy attack roll: monster spec for damage dice, hero AC comparison, attack bonus from monster type
+- `apply_damage_to_group` — distributes damage across enemy group, kills individuals, shifts survivors forward, updates group roster
+- `apply_damage_to_hero` — handles all damage outcomes: death (status 3), stoning (status 4), poisoning (status 1), level drain (decrements level + recalcs XP), possession (status 6, swaps stats), and game over check
+- `check_spell_valid` — validates caster class can use the spell by searching allowed spell list
+- `resolve_spell_effect` — full spell resolution: calculates damage, applies to target, prints "at [name] for X points of damage"
+- `tick_spell_duration` — decrements active spell/song timer, fires cleanup when expired
+- `start_spell_or_song` — initializes spell/song: sets duration from lookup table, stores spell ID, sets active flag
+
+### Verified
+- Binary still matches original after all renames
+
 ## [0.5.0] - 2026-03-27
 
 ### Identified (14 routines — character/party system)

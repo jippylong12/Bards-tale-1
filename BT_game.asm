@@ -257,11 +257,11 @@ sub_7785:
 		include "code/7A4A-7A66_clean_hero_memory.asm"
 		include "code/7A67-7A9D_process_special_event.asm"
 		include "code/7A9E-7AB7_find_equipped_by_type.asm"
-		include "code/7AB8-7BEC___UNKNOWN.asm"
+		include "code/7AB8-7BEC_calc_attack_damage.asm"
 		include "code/7BED-7BF3_divide_A_by_16.asm"
-		include "code/7BF4-7C4D___UNKNOWN.asm"
-		include "code/7C4E-7CD2___UNKNOWN.asm"
-		include "code/7CD3-7DB3___UNKNOWN.asm"
+		include "code/7BF4-7C4D_calc_enemy_attack.asm"
+		include "code/7C4E-7CD2_apply_damage_to_group.asm"
+		include "code/7CD3-7DB3_apply_damage_to_hero.asm"
 
 		include "data/7DB4-7DB7_UNKNOWN_TABLE_3.asm"
 
@@ -293,9 +293,9 @@ dyn_proc_54:						; RST_10_29
 		include "code/80FB-810D_choose_hero.asm"
 		include "code/810E-816E_spell_casting.asm"
 		include "code/816E-819A_light_the_light.asm"
-		include "code/819B-81D4___UNKNOWN.asm"
-		include "code/81D5-82BD___UNKNOWN.asm"
-		include "code/82BE-82D1___UNKNOWN.asm"
+		include "code/819B-81D4_check_spell_valid.asm"
+		include "code/81D5-82BD_resolve_spell_effect.asm"
+		include "code/82BE-82D1_tick_spell_duration.asm"
 
 ; ======= S U B	R O U T	I N E =========
 
@@ -307,7 +307,7 @@ sub_82D2:
 
 ; -------------------------------------
 
-		include "code/82D7-82FB___UNKNOWN.asm"
+		include "code/82D7-82FB_start_spell_or_song.asm"
 
 		include "data/82FC-8313_UNKNOWN.asm"
 

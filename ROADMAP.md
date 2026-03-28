@@ -104,16 +104,16 @@ All 19 combat routines identified, renamed, and verified.
 - [x] `7DB8-7DF8` — regenerate_hp_sp
 - [x] `7DF9-7E37` — regen_equipped_effects
 
-### v0.6.0 — Reverse Engineer Magic System (8 files)
+### v0.6.0 — Reverse Engineer Magic/Damage System (8 files) (DONE)
 
-- [ ] `7AB8-7BEC` — spell effect processing (large, ~300 bytes)
-- [ ] `7BF4-7C4D` — spell effect processing
-- [ ] `7C4E-7CD2` — spell effect processing
-- [ ] `7CD3-7DB3` — spell effect processing (large, ~224 bytes)
-- [ ] `819B-81D4` — spell/light system
-- [ ] `81D5-82BD` — spell/light system (large, ~232 bytes)
-- [ ] `82BE-82D1` — spell helper
-- [ ] `82D7-82FB` — spell helper
+- [x] `7AB8-7BEC` — calc_attack_damage (melee: weapon, AC, class, Monk/Hunter specials)
+- [x] `7BF4-7C4D` — calc_enemy_attack (monster attack vs hero)
+- [x] `7C4E-7CD2` — apply_damage_to_group (kill enemies, shift survivors)
+- [x] `7CD3-7DB3` — apply_damage_to_hero (death, stoning, poison, level drain, possession)
+- [x] `819B-81D4` — check_spell_valid (caster type vs spell class validation)
+- [x] `81D5-82BD` — resolve_spell_effect (full spell resolution + damage output)
+- [x] `82BE-82D1` — tick_spell_duration (decrement timer, cleanup on expire)
+- [x] `82D7-82FB` — start_spell_or_song (init duration, store ID, activate)
 
 ### v0.7.0 — Reverse Engineer Dungeon/Navigation System (8 files)
 
