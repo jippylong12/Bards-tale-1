@@ -328,8 +328,8 @@ loc_8518:
 		include "code/8607-861A_spell_reveal_secret.asm"
 		include "code/861B-8625_spell_flee_effect.asm"
 		include "code/8626-8648_spell_ac_modifier.asm"
-		include "code/8649-86A9___UNKNOWN.asm"
-		include "code/86AA-86C4___UNKNOWN.asm"
+		include "code/8649-86A9_show_location_info.asm"
+		include "code/86AA-86C4_spell_attack_bonus.asm"
 
 ; -------------------------------------
 
@@ -397,7 +397,7 @@ shield_setup:
 ; -------------------------------------
 
 		include "code/8706-8777_proc_teleport.asm"
-		include "code/8778-87B4___UNKNOWN.asm"
+		include "code/8778-87B4_adjust_value_updown.asm"
 		include "code/87B5-87CF_print_plus_minus.asm"
 
 ; -------------------------------------
@@ -450,12 +450,12 @@ dyn_proc_80:				; RST_10_49
 		ret
 ; -------------------------------------
 
-		include "code/8889-8895___UNKNOWN.asm"
+		include "code/8889-8895_roll_damage_dice.asm"
 		include "code/8896-8899_print_ellipsis.asm"
 		include "code/889A-99C9_print_N_enemies.asm"
 		include "code/88CA-88E4_print_12_digits.asm"
-		include "code/88E5-890C___UNKNOWN.asm"
-		include "code/890D-891C___UNKNOWN.asm"
+		include "code/88E5-890C_print_large_number.asm"
+		include "code/890D-891C_toggle_speed_flag.asm"
 
 ; -------------------------------------
 		ret
@@ -525,7 +525,7 @@ OPTION_KEYS:
 		include "data/A5EC-BFE1_UNKNOWN.asm"
 
 		include "code/BFE2-C009_print_routines2.asm"
-		include "code/C00A-C038___UNKNOWN.asm"
+		include "code/C00A-C038_print_item_name_padded.asm"
 
 ; -------------------------------------
 

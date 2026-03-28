@@ -128,15 +128,15 @@ Note: originally labeled "dungeon" — turned out to be spell effect dispatch ta
 - [x] `861B-8625` — spell_flee_effect (spell-assisted escape)
 - [x] `8626-8648` — spell_ac_modifier (party/enemy AC buff/debuff)
 
-### v0.8.0 — Reverse Engineer Remaining Core + Print/Display (7 files)
+### v0.8.0 — Reverse Engineer Remaining Core + Print/Display (7 files) (DONE)
 
-- [ ] `8649-86A9` — misc game logic
-- [ ] `86AA-86C4` — misc game logic
-- [ ] `8778-87B4` — display/UI helper
-- [ ] `8889-8895` — display/UI helper
-- [ ] `88E5-890C` — print/display routine
-- [ ] `890D-891C` — print/display routine
-- [ ] `C00A-C038` — print routine variant
+- [x] `8649-86A9` — show_location_info ("You face East, in Skara Brae" / dungeon coords)
+- [x] `86AA-86C4` — spell_attack_bonus (attack power buff)
+- [x] `8778-87B4` — adjust_value_updown (UI: +/- value selector)
+- [x] `8889-8895` — roll_damage_dice (B random d4 rolls added to HL)
+- [x] `88E5-890C` — print_large_number (multi-digit formatted output)
+- [x] `890D-891C` — toggle_speed_flag (animation speed toggle)
+- [x] `C00A-C038` — print_item_name_padded (right-pad item name to 11 chars)
 
 ### v0.9.0 — Reverse Engineer City/Level Code (24 files)
 

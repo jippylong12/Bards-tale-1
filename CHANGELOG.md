@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.8.0] - 2026-03-28
+
+### Identified (7 routines — core + display)
+- `show_location_info` — prints "You face [direction]" with dungeon level/coordinates or "in Skara Brae"
+- `spell_attack_bonus` — applies attack power bonus from spell to party or enemy
+- `adjust_value_updown` — UI widget for adjusting values with up/down keys, wraps at 0/21
+- `roll_damage_dice` — rolls B d4 dice, accumulates in HL (core damage randomizer)
+- `print_large_number` — formats multi-digit number from table with line-wrap handling
+- `toggle_speed_flag` — toggles VAR_2E between 0 and 0xFF for animation speed
+- `print_item_name_padded` — prints item name right-padded with spaces to 11 characters
+
+### Verified
+- Binary still matches original — all 61 core UNKNOWN files now identified
+
 ## [0.7.0] - 2026-03-28
 
 ### Identified (8 routines — spell effect handlers)
