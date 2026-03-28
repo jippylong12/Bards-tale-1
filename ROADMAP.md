@@ -163,13 +163,48 @@ All 75 code UNKNOWN routines identified and renamed.
 
 - [x] Verify final binary still matches original
 
-#### Future work (not blocking 1.0.0)
-- [ ] Name all `VAR_xx` game variables
-- [ ] Name all `CHAR_xx` and `ENEMY_xx` struct offsets
-- [ ] Name all `___table_xx` data tables
-- [ ] Document RST 10h dispatch system architecture
-- [ ] Create cross-reference map (caller/callee graph)
-- [ ] Write architecture overview document
+---
+
+## Milestone 2: Documentation & Naming Cleanup (v1.1.x)
+
+Completing the remaining symbolic naming so the source reads like real code,
+not hex offsets. Each patch version is independently verifiable.
+
+### v1.1.0 — Name Game Variables (70 unnamed)
+
+The `VAR_xx` constants in `constants.asm` are hex offsets with no meaning.
+Now that all routines are identified, we can trace how each variable is used
+and give it a proper name.
+
+- [ ] Trace and name all 70 `VAR_xx` game variables in `constants.asm`
+- [ ] Verify binary matches after all renames
+
+### v1.2.0 — Name Character & Enemy Struct Offsets (12 unnamed)
+
+- [ ] Name 7 unnamed `CHAR_xx` offsets (CHAR_12, CHAR_13, CHAR_15, etc.)
+- [ ] Name 5 unnamed `ENEMY_xx` offsets (ENEMY_10, ENEMY_11, ENEMY_15, etc.)
+- [ ] Verify binary matches
+
+### v1.3.0 — Name Data Tables & Macros (31 unnamed)
+
+- [ ] Name 13 `___table_xx` data tables in BT_game.asm
+- [ ] Name 18 unnamed `RST_10_xx` macros in macroses.asm
+- [ ] Verify binary matches
+
+### v1.4.0 — Architecture Documentation
+
+- [ ] Document RST 10h dispatch system (how the macro/jump table works)
+- [ ] Document memory map ($5B00-$FFFF layout)
+- [ ] Document character struct layout (all 100 bytes)
+- [ ] Document enemy struct layout
+- [ ] Document the address table system (INX_xx indices)
+
+### v1.5.0 — Cross-Reference Map
+
+- [ ] Generate caller/callee graph for all named routines
+- [ ] Document which spells map to which effect handlers
+- [ ] Document city location dispatch table
+- [ ] Add cross-reference section to README or separate ARCHITECTURE.md
 
 ---
 
