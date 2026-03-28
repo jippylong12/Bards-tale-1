@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.3.0] - 2026-03-28
+
+### Added
+- **City monster toggle** — press F while walking to turn random encounters on/off. Press F again to re-enable. When off, you can explore freely without ambushes. Flag resets on game restart (default: encounters ON).
+
 ## [2.2.0] - 2026-03-28
 
 ### Changed

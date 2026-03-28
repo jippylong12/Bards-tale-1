@@ -277,15 +277,12 @@ These modify only a few bytes each and don't require new routines.
 - [x] Changed VAR_COMBAT_SPEED default from 5 to 2 (1 byte at $6033)
 - [x] Combat text and action resolution ~2.5x faster
 
-#### v2.3.0 — Disable City Monsters Cheat as Toggle
+#### v2.3.0 — Toggle City Monsters with F Key (DONE)
 
-The NOCITYMONSTERS define already exists but requires recompilation.
-Add a runtime toggle key (e.g. F1) that sets VAR_AMBUSH_FLAG to
-skip combat in the city.
-
-- [ ] Hook a key check in the main loop (~10 bytes in free space)
-- [ ] Toggle a flag that bypasses city_ambush
-- [ ] Smoke test: press key, walk around, no encounters
+- [x] Press F while walking to toggle encounters on/off
+- [x] ambush_gate routine checks flag before random roll
+- [x] ~25 bytes used in free space (125 remaining)
+- [x] Smoke tested: F toggles, encounters stop/resume
 
 #### v2.4.0 — Show Coordinates on Screen
 

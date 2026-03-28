@@ -19,7 +19,7 @@ loop_city_walk:
 
 		jr	nz, no_city_ambush
 
-		GET_RND_BY_PARAM	3Fh
+		call	ambush_gate			; v2.3.0: check toggle flag + random
 
 		IFDEF NOCITYMONSTERS
 			jr	no_city_ambush
