@@ -87,22 +87,22 @@ All 19 combat routines identified, renamed, and verified.
 - [x] `5C17-5C50` — calc_xp_thresholds
 - [x] `64CA-64DB` — check_item_effect
 
-### v0.5.0 — Reverse Engineer Character/Party System (14 files)
+### v0.5.0 — Reverse Engineer Character/Party System (14 files) (DONE)
 
-- [ ] `7590-75A4` — character stat operation
-- [ ] `75A5-75BE` — character stat operation
-- [ ] `75BF-7624` — character stat operation
-- [ ] `7625-7638` — character stat operation
-- [ ] `7639-7663` — character stat operation
-- [ ] `76B9-76EC` — gold/economy operation
-- [ ] `771C-773B` — gold/economy operation
-- [ ] `7766-7779` — roster management
-- [ ] `77B0-77D7` — attribute packing/unpacking
-- [ ] `7828-78A7` — character status processing
-- [ ] `78A8-78CB` — character status processing
-- [ ] `78CC-78D9` — character status processing
-- [ ] `7DB8-7DF8` — character data operation
-- [ ] `7DF9-7E37` — character data operation
+- [x] `7590-75A4` — check_spell_cost
+- [x] `75A5-75BE` — use_and_break_item
+- [x] `75BF-7624` — calc_armor_class (Monk level bonus, equipped weapon/shield)
+- [x] `7625-7638` — recalc_party_ac
+- [x] `7639-7663` — add_item_to_hero (class equip eligibility)
+- [x] `76B9-76EC` — calc_xp_for_level (per-class thresholds)
+- [x] `771C-773B` — add_to_bcd_number (12-digit BCD math)
+- [x] `7766-7779` — check_heroes_alive
+- [x] `77B0-77D7` — store_bcd_and_compare (overflow check)
+- [x] `7828-78A7` — summon_creature (enemy becomes ally)
+- [x] `78A8-78CB` — apply_anti_magic
+- [x] `78CC-78D9` — process_dungeon_step
+- [x] `7DB8-7DF8` — regenerate_hp_sp
+- [x] `7DF9-7E37` — regen_equipped_effects
 
 ### v0.6.0 — Reverse Engineer Magic System (8 files)
 

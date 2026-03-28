@@ -206,19 +206,19 @@ if_FB98_is_zero:
 ; -------------------------------------
 
 		include "code/7539-758F_who_cast_spell.asm"
-		include "code/7590-75A4___UNKNOWN.asm"
-		include "code/75A5-75BE___UNKNOWN.asm"
-		include "code/75BF-7624___UNKNOWN.asm"
-		include "code/7625-7638___UNKNOWN.asm"
-		include "code/7639-7663___UNKNOWN.asm"
+		include "code/7590-75A4_check_spell_cost.asm"
+		include "code/75A5-75BE_use_and_break_item.asm"
+		include "code/75BF-7624_calc_armor_class.asm"
+		include "code/7625-7638_recalc_party_ac.asm"
+		include "code/7639-7663_add_item_to_hero.asm"
 		include "code/7664-768F_print_hero_attrib.asm"
 		include "code/7690-76B8_shoppe_pool_gold.asm"
-		include "code/76B9-76EC___UNKNOWN.asm"
+		include "code/76B9-76EC_calc_xp_for_level.asm"
 		include "code/76ED-771B_increas_12_digits.asm"
-		include "code/771C-773B___UNKNOWN.asm"
+		include "code/771C-773B_add_to_bcd_number.asm"
 		include "code/773C-7757_copy_hero_money.asm"
 		include "code/7758-7765_is_roster_full.asm"
-		include "code/7766-7779___UNKNOWN.asm"
+		include "code/7766-7779_check_heroes_alive.asm"
 
 ; -------------------------------------
 
@@ -243,12 +243,12 @@ sub_7785:
 ; -------------------------------------
 
 		include "code/778B-77AF_decreas_12_digits.asm"
-		include "code/77B0-77D7___UNKNOWN.asm"
+		include "code/77B0-77D7_store_bcd_and_compare.asm"
 		include "code/77B8-77FF_unpack_hero_attrs.asm"
 		include "code/7800-7827_pack_hero_attrs.asm"
-		include "code/7828-78A7___UNKNOWN.asm"
-		include "code/78A8-78CB___UNKNOWN.asm"
-		include "code/78CC-78D9___UNKNOWN.asm"
+		include "code/7828-78A7_summon_creature.asm"
+		include "code/78A8-78CB_apply_anti_magic.asm"
+		include "code/78CC-78D9_process_dungeon_step.asm"
 		include "code/78DA-7905_process_poison.asm"
 		include "code/7906-794C_party_disbelieve.asm"
 		include "code/794D-7966_spend_spell_points.asm"
@@ -267,8 +267,8 @@ sub_7785:
 
 ; ======= S U B	R O U T	I N E =========
 
-		include "code/7DB8-7DF8___UNKNOWN.asm"
-		include "code/7DF9-7E37___UNKNOWN.asm"
+		include "code/7DB8-7DF8_regenerate_hp_sp.asm"
+		include "code/7DF9-7E37_regen_equipped_effects.asm"
 		include "code/7E38-7F78_enemies_killed.asm"
 		include "code/7F79-7FB2_award_experience.asm"
 		include "code/7FB3-7FF1_enemy_joins_party.asm"

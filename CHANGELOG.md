@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.5.0] - 2026-03-27
+
+### Identified (14 routines — character/party system)
+- `check_spell_cost` — validates caster has enough SP for the spell
+- `use_and_break_item` — uses item with random chance to break (if value < 0x30)
+- `calc_armor_class` — computes AC from class, level, equipment. Monks get level-based AC bonus (capped at 21). Loops equipped items for weapon bonuses.
+- `recalc_party_ac` — recalculates AC for all 6 party members
+- `add_item_to_hero` — finds empty inventory slot, checks class equip eligibility
+- `calc_xp_for_level` — XP thresholds differ per class (offset by 13 per class in table)
+- `add_to_bcd_number` — positional add into 12-digit BCD numbers (how XP/gold math works internally)
+- `check_heroes_alive` — iterates party checking alive + unflagged status
+- `store_bcd_and_compare` — BCD conversion with max-value overflow protection
+- `summon_creature` — converts enemy monster data into a party ally slot
+- `apply_anti_magic` — blocks spells in anti-magic zones, clears active effects
+- `process_dungeon_step` — increments dungeon counter, triggers map refresh
+- `regenerate_hp_sp` — loops party restoring HP/SP toward max values
+- `regen_equipped_effects` — per-hero regen from equipped item types 1 and 2
+
+### Verified
+- Binary still matches original after all renames
+
 ## [0.4.0] - 2026-03-27
 
 ### Identified (4 routines — encounter generation)
