@@ -240,11 +240,19 @@ match the original. Verification shifts to: compile + load in emulator +
 smoke test.
 
 **Constraints discovered during analysis:**
-- Only ~181 bytes of free space in the binary ($FA9B-$FB50)
+- Only 181 bytes of free space in the binary ($FA9B-$FB50)
 - Total RAM: 48K, game uses 42K ($5B00-$FFFF)
 - All addresses are hardcoded — inserting code shifts jump targets
 - Self-modifying code is used throughout
 - No native ZX Spectrum → ARM port has ever been done
+
+**Free space byte budget ($FA9B-$FB50):**
+
+| Feature | Bytes | Running Total | Remaining |
+|---------|-------|---------------|-----------|
+| v2.0.0 WASD movement | 31 | 31 | 150 |
+| v2.3.0 Monster toggle | 26 | 57 | 124 |
+| v2.4.0 Coordinate display | 40 | 97 | 84 |
 
 ### Verification Strategy (post-v1.x)
 
@@ -288,7 +296,8 @@ These modify only a few bytes each and don't require new routines.
 
 - [x] Coordinates (N/S,E/W) displayed after every move/turn
 - [x] Hooked into move_execute, prints before compass update
-- [x] ~30 bytes used in free space (~95 remaining)
+- [x] 40 bytes used in free space (85 remaining)
+- [x] Smoke tested: coordinates update correctly, no crashes
 
 ---
 

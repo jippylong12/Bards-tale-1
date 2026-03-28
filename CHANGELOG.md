@@ -6,7 +6,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 ## [2.4.0] - 2026-03-28
 
 ### Added
-- **Coordinate display** — N/S and E/W grid position shown after every movement. Displays in top-right corner as "X,Y". No need to open the location info screen to know where you are.
+- **Coordinate display** — N/S and E/W grid position shown at top-right after every movement/turn. Format: "X,Y". 40 bytes in free space, 85 remaining.
 
 ## [2.3.0] - 2026-03-28
 

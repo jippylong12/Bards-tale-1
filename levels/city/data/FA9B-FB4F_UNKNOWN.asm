@@ -57,51 +57,40 @@ no_monsters_flag:
 		db	0				; 0 = normal, 1 = no city monsters
 
 ; --- Show coordinates after movement (v2.4.0) ---
+; Prints N/S,E/W at top-right, then chains to compass display.
+; No register saves needed: show_icon_A does its own PUSH_REGS,
+; and move_execute's next instruction (jp dyn_proc_81) is stateless.
 show_coords:
-		push	af
-		push	bc
-		push	de
+		; Guard: skip if game is paused/in menu
+		ld	a, (iy+VAR_PAUSE)
+		or	a
+		jp	nz, show_compass
+
+		; Save cursor position
+		ld	hl, (GAME_VARIABLES + VAR_CURSOR_ROW)
 		push	hl
 
-		; Save current cursor position
-		ld	a, (GAME_VARIABLES + VAR_CURSOR_ROW)
-		push	af
-		ld	a, (GAME_VARIABLES + VAR_CURSOR_COL)
-		push	af
-
-		; Set cursor to top-right area (row 0, col 26)
-		ld	hl, 001Ah
+		; Set cursor to row 2, col 29 (L=row, H=col)
+		ld	hl, 1D02h
 		ld	(GAME_VARIABLES + VAR_CURSOR_ROW), hl
 
 		; Print N/S coordinate
 		ld	e, (iy+VAR_COORD_SO_NO)
-
 		PRINT_NUM_FROM_E
 
-		; Print separator
 		ld	a, ','
-
 		PRINT_WITH_CODES
 
 		; Print E/W coordinate
 		ld	e, (iy+VAR_COORD_WE_EA)
-
 		PRINT_NUM_FROM_E
 
 		PRINT_SPACE
 
 		; Restore cursor position
-		pop	af
-		ld	(GAME_VARIABLES + VAR_CURSOR_COL), a
-		pop	af
-		ld	(GAME_VARIABLES + VAR_CURSOR_ROW), a
-
 		pop	hl
-		pop	de
-		pop	bc
-		pop	af
+		ld	(GAME_VARIABLES + VAR_CURSOR_ROW), hl
 
-		; Call original show_compass
 		jp	show_compass
 
 ; --- Pad remaining free space with zeros ---
