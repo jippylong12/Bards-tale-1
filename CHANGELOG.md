@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.1.0] - 2026-03-28
+
+### Changed
+- **Halved city encounter rate** — first ambush random threshold changed from 3Fh (1/64) to 7Fh (1/128). Combined probability per step: 1/8192 (was 1/4096). One byte change at $5B19.
+
 ## [2.0.0] - 2026-03-28
 
 ### Added

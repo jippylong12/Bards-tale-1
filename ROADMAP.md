@@ -266,14 +266,11 @@ These modify only a few bytes each and don't require new routines.
 - [x] 31 bytes used in free space at $FA9B (150 remaining)
 - [x] Smoke tested: WASD and IJKL both work in city
 
-#### v2.1.0 — Reduce Encounter Rate
+#### v2.1.0 — Reduce Encounter Rate (DONE)
 
-City ambush check requires 3 consecutive random passes. Change the
-third threshold from 7Fh to FFh (1 byte change) to roughly halve
-city encounter rate.
-
-- [ ] Modify ambush threshold in game_cycle.asm
-- [ ] Smoke test: walk around city, encounters should be rarer
+- [x] Changed first ambush threshold from 3Fh to 7Fh (1 byte at $5B19)
+- [x] Encounter rate: 1/8192 per step (was 1/4096) — half as frequent
+- [x] Smoke tested: noticeably fewer random encounters while walking
 
 #### v2.2.0 — Speed Up Combat Animations
 

@@ -15,7 +15,7 @@ loop_city_walk:
 
 		ld	(GAME_VARIABLES + VAR_PRESSED_KEY), a
 
-		GET_RND_BY_PARAM	3Fh
+		GET_RND_BY_PARAM	7Fh		; was 3Fh — halves encounter rate
 
 		jr	nz, no_city_ambush
 
