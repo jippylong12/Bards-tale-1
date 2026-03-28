@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.0.0] - 2026-03-28
+
+### Added
+- **WASD movement** — W=forward, S=back, A=turn left, D=turn right
+- Original I/J/K/L controls still work alongside WASD
+- No key conflicts: WASD only active during city walking, not in menus/combat/buildings
+- First actual code modification: hook at $EEE5 jumps to new handler at $FA9B
+- 31 of 181 free bytes used, 150 remaining for future enhancements
+
 ## [2.0.0-roadmap] - 2026-03-28
 
 ### Added

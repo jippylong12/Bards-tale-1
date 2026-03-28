@@ -259,15 +259,12 @@ smoke test.
 
 These modify only a few bytes each and don't require new routines.
 
-#### v2.0.0 — Add WASD Movement Support
+#### v2.0.0 — Add WASD Movement Support (DONE)
 
-Movement handler checks I/J/K/L. Add W/A/S/D as alternatives.
-~12 bytes of additional comparisons in existing free space around
-the movement routine.
-
-- [ ] Add W = forward, S = kick/back, A = turn left, D = turn right
-- [ ] Keep I/J/K/L working (don't remove legacy controls)
-- [ ] Smoke test: navigate city with both WASD and IJKL
+- [x] Add W = forward, S = kick/back, A = turn left, D = turn right
+- [x] Keep I/J/K/L working (legacy controls preserved)
+- [x] 31 bytes used in free space at $FA9B (150 remaining)
+- [x] Smoke tested: WASD and IJKL both work in city
 
 #### v2.1.0 — Reduce Encounter Rate
 
